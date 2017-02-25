@@ -1,0 +1,85 @@
+@import "materialize";
+
+body {
+  background-color: black;
+  width: 100vw;
+  margin-bottom: 20%;
+}
+
+
+.page-header {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.well {
+   background-color: rgba(58, 48, 49, 0.8);
+   height: 80%;
+   margin-top: 10%;
+   margin-bottom: 25%;
+   position: relative;
+   padding: 3%;
+}
+
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  z-index: 1;
+  height: 20vh;
+  a {
+    color: white;
+  }
+  a:visited {
+    color: white;
+  }
+  a:active {
+    color: white;
+  }
+  li {
+    color: white;
+  }
+}
+
+.resizeImg {
+  width: 50%;
+  height: auto;
+  margin-left: 25%;
+  padding-top: 4%;
+}
+
+.homeStyle {
+  margin-left: -10%;
+  margin-right: -10%;
+  h1 {font-size: 10em;
+  color: white;
+  text-align: center;
+  margin-top: 10%;}
+
+  h2 {
+    font-size: 4.3em;
+    color: white;
+    text-align: center;
+    margin-top: -20px;
+  }
+}
+
+.centerText {
+  text-align: center;
+}
+
+.card-image {
+  height: 300px;
+  overflow: hidden;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: right;
+}
