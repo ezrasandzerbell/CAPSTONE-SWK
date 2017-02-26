@@ -3,6 +3,8 @@
 <% if @song.cryptogram %>
   <h2><%= @song.cryptogram.word %> </h2>
 
+  <%= link_to "Back to songbank", songs_path %>
+
 <% else %>
   <%= link_to "Create a cryptogram", new_song_cryptogram_path(@song) %>
 <% end %>
