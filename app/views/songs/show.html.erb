@@ -2,9 +2,14 @@
 
 <% if @song.cryptogram %>
   <h2><%= @song.cryptogram.word %> </h2>
+  <div class="row">
+    <% @song.cryptogram.note_array.each do |noteDiv| %>
+      <%= noteDiv.html_safe %>
+    <% end %>
+  </div>
 
   <%= link_to "Back to songbank", songs_path %>
-
+<br>
 <% else %>
   <%= link_to "Create a cryptogram", new_song_cryptogram_path(@song) %>
 <% end %>

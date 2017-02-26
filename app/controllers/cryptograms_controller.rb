@@ -10,6 +10,8 @@ class CryptogramsController < ApplicationController
     @user = current_user
     @song = Song.find(params[:song_id])
     @cryptogram = Cryptogram.new(:word => crypto_params[:word], :song_id => @song.id)
+    @cryptogram.note_array = @cryptogram.musicEncryption
+    binding.pry
     if @cryptogram.save
       flash[:notice] = "Cryptogram added!"
       redirect_to user_song_path(@user, @song)
