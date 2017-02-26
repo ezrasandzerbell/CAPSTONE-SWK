@@ -1,0 +1,5 @@
+<%= form_for [@song,@cryptogram] do |f| %>
+  <%= f.label :word,'Enter your word here:' %>
+  <%= f.text_field :word %>
+  <%= f.submit %>
+<% end %>

@@ -15,14 +15,16 @@
     <!-- PageHeader / Site Logo -->
 
     <div class="page-header">
-      <%= image_tag "swklogo.jpg"%>
+      <a href="/"><%= image_tag "swklogo.jpg"%></a>
     </div>
 
     <!-- End of PageHeader / Site Logo -->
 
     <!-- MAIN BODY - YIELD -->
+    <div class="container">
+      <%= yield %>
+    </div>
 
-    <%= yield %>
 
     <!-- End of MAIN BODY - YIELD -->
 
@@ -37,7 +39,7 @@
             <% end %>
               <li><a href="/" class=" logo-size">Home Page</a></li>
             <% if current_user %>
-              <li><%= link_to "View My Products", products_path, :class => 'main-links' %> </li>
+              <li><%= link_to "Songbank", songs_path, :class => 'main-links' %></li>
               <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
             <% else %>
               <li>  <%= link_to "Log-in", new_user_session_path %> | <%= link_to "Signup", new_user_registration_path %></li>

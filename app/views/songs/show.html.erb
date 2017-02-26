@@ -1,0 +1,8 @@
+<h1><%= @song.title %></h1>
+
+<% if @song.cryptogram %>
+  <h2><%= @song.cryptogram.word %> </h2>
+
+<% else %>
+  <%= link_to "Create a cryptogram", new_song_cryptogram_path(@song) %>
+<% end %>

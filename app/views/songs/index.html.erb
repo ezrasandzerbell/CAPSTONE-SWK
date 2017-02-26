@@ -1,0 +1,13 @@
+<% if @user %>
+
+  <%= link_to "Click here to create a new song.", new_user_song_path(@user.id) %>
+
+  <% @songs.each do |song| %>
+    <h4> <%= song.id %>. <%= link_to song.title, user_song_path(@user, song) %></h4>  
+  <% end %>
+
+<% else %>
+
+  <p>Please Log In</p>
+
+<% end %>
