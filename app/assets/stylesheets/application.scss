@@ -251,7 +251,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-color: #ff0000;
 }
 
-.c:active, .c1:active, .c2:active, .c3:active, .c4:active {
+.c:active, .c1:active, .c2:active, .c3:active, .c4:active, .cActive {
   -webkit-box-shadow:inset 0px 0px 0px 2px #FF0000;
    -moz-box-shadow:inset 0px 0px 0px 2px #FF0000;
    box-shadow:inset 0px 0px 0px 2px #FF0000;
@@ -262,7 +262,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-color: #ff4000;
 }
 
-.cSharp:active, .cSharp1:active, .cSharp2:active, .cSharp3:active, .cSharp4:active {
+.cSharp:active, .cSharp1:active, .cSharp2:active, .cSharp3:active, .cSharp4:active, .cSharpActive {
   -webkit-box-shadow:inset 0px 0px 0px 2px #ff4000;
    -moz-box-shadow:inset 0px 0px 0px 2px #ff4000;
    box-shadow:inset 0px 0px 0px 2px #ff4000;
@@ -272,7 +272,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-color: #ffa500;
 }
 
-.d:active, .d1:active, .d2:active, .d3:active, .d4:active {
+.d:active, .d1:active, .d2:active, .d3:active, .d4:active, .dActive {
   -webkit-box-shadow:inset 0px 0px 0px 2px #ffa500;
    -moz-box-shadow:inset 0px 0px 0px 2px #ffa500;
    box-shadow:inset 0px 0px 0px 2px #ffa500;
@@ -283,7 +283,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-color: #ffce00;
 }
 
-.dSharp:active, .dSharp1:active, .dSharp2:active, .dSharp3:active, .dSharp4:active {
+.dSharp:active, .dSharp1:active, .dSharp2:active, .dSharp3:active, .dSharp4:active, .dSharpActive {
   -webkit-box-shadow:inset 0px 0px 0px 2px #ffce00;
    -moz-box-shadow:inset 0px 0px 0px 2px #ffce00;
    box-shadow:inset 0px 0px 0px 2px #ffce00;
@@ -294,7 +294,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-color: #FFFF00;
 }
 
-.e:active, .e1:active, .e2:active, .e3:active, .e4:active {
+.e:active, .e1:active, .e2:active, .e3:active, .e4:active, .eActive {
   -webkit-box-shadow:inset 0px 0px 0px 2px #FFFF00;
    -moz-box-shadow:inset 0px 0px 0px 2px #FFFF00;
    box-shadow:inset 0px 0px 0px 2px #FFFF00;
@@ -305,7 +305,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-color: #bdff00;
 }
 
-.f:active, .f1:active, .f2:active, .f3:active, .f4:active {
+.f:active, .f1:active, .f2:active, .f3:active, .f4:active, .fActive {
   -webkit-box-shadow:inset 0px 0px 0px 2px #bdff00;
    -moz-box-shadow:inset 0px 0px 0px 2px #bdff00;
    box-shadow:inset 0px 0px 0px 2px #bdff00;
@@ -315,7 +315,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-color: #008000;
 }
 
-.fSharp:active, .f1Sharp:active, .f2Sharp:active, .f3Sharp:active, .f4Sharp:active {
+.fSharp:active, .f1Sharp:active, .f2Sharp:active, .f3Sharp:active, .f4Sharp:active, .fSharpActive {
 
   -webkit-box-shadow:inset 0px 0px 0px 2px #008000;
    -moz-box-shadow:inset 0px 0px 0px 2px #008000;
@@ -327,7 +327,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-color: #0fbfa9;
 }
 
-.g:active, .g1:active, .g2:active, .g3:active, .g4:active {
+.g:active, .g1:active, .g2:active, .g3:active, .g4:active, .gActive {
   -webkit-box-shadow:inset 0px 0px 0px 2px #0fbfa9;
    -moz-box-shadow:inset 0px 0px 0px 2px #0fbfa9;
    box-shadow:inset 0px 0px 0px 2px #0fbfa9;
@@ -338,7 +338,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-color: #0000ff;
 }
 
-.gSharp:active, .g1Sharp:active, .g2Sharp:active, .g3Sharp:active, .g4Sharp:active {
+.gSharp:active, .g1Sharp:active, .g2Sharp:active, .g3Sharp:active, .g4Sharp:active, .gSharpActive {
   -webkit-box-shadow:inset 0px 0px 0px 2px #0000ff;
    -moz-box-shadow:inset 0px 0px 0px 2px #0000ff;
    box-shadow:inset 0px 0px 0px 2px #0000ff;
@@ -349,18 +349,17 @@ p, h1, h2, h3, h4, h5, h6 {
   border-color: #4b0082;
 }
 
-.a:active, .a1:active, .a2:active, .a3:active, .a4:active {
+.a:active, .a1:active, .a2:active, .a3:active, .a4:active, .aActive {
   -webkit-box-shadow:inset 0px 0px 0px 2px #4b0082;
    -moz-box-shadow:inset 0px 0px 0px 2px #4b0082;
    box-shadow:inset 0px 0px 0px 2px #4b0082;
 }
 
 .aSharp, .aSharp:hover, .aSharp:active, .a1Sharp, .a1Sharp:hover, .a1Sharp:active, .a2Sharp, .a2Sharp:hover, .a2Sharp:active, .a3Sharp, .a3Sharp:hover, .a3Sharp:active, .a4Sharp, .a4Sharp:hover, .a4Sharp:active {
-
   border-color: #ab6bfd;
 }
 
-.aSharp:active, .a1Sharp:active, .a2Sharp:active, .a3Sharp:active, .a4Sharp:active {
+.aSharp:active, .a1Sharp:active, .a2Sharp:active, .a3Sharp:active, .a4Sharp:active, .aSharpActive {
   -webkit-box-shadow:inset 0px 0px 0px 2px #ab6bfd;
    -moz-box-shadow:inset 0px 0px 0px 2px #ab6bfd;
    box-shadow:inset 0px 0px 0px 2px #ab6bfd;
@@ -371,7 +370,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-color: #ee82ee;
 }
 
-.b:active, .b1:active, .b2:active, .b3:active, .b4:active {
+.b:active, .b1:active, .b2:active, .b3:active, .b4:active, .bActive {
   -webkit-box-shadow:inset 0px 0px 0px 2px #ee82ee;
    -moz-box-shadow:inset 0px 0px 0px 2px #ee82ee;
    box-shadow:inset 0px 0px 0px 2px #ee82ee;
