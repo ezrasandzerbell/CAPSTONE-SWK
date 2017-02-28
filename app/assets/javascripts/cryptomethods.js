@@ -81,52 +81,52 @@ $(document).on ("turbolinks:load", function(){
 
   $(".c1").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/c1.mp3');
+    audioElement.setAttribute('src', '/audio/C1.mp3');
     audioElement.play();
   });
   $(".c1Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/cSharp1.mp3');
+    audioElement.setAttribute('src', '/audio/Db.mp3');
     audioElement.play();
   });
   $(".d1").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/d1.mp3');
+    audioElement.setAttribute('src', '/audio/D1.mp3');
     audioElement.play();
   });
   $(".d1Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/dSharp1.mp3');
+    audioElement.setAttribute('src', '/audio/Ebflat.mp3');
     audioElement.play();
   });
   $(".e1").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/e1.mp3');
+    audioElement.setAttribute('src', '/audio/E1.mp3');
     audioElement.play();
   });
   $(".f1").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/f1.mp3');
+    audioElement.setAttribute('src', '/audio/F1.mp3');
     audioElement.play();
   });
   $(".f1Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/fSharp1.mp3');
+    audioElement.setAttribute('src', '/audio/Gb1.mp3');
     audioElement.play();
   });
   $(".g1").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/g1.mp3');
+    audioElement.setAttribute('src', '/audio/G1.mp3');
     audioElement.play();
   });
   $(".g1Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/gSharp1.mp3');
+    audioElement.setAttribute('src', '/audio/Ab1.mp3');
     audioElement.play();
   });
   $(".a1").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/a1.mp3');
+    audioElement.setAttribute('src', '/audio/A1.mp3');
     audioElement.play();
   });
   $(".a1Sharp").click(function() {
@@ -136,57 +136,57 @@ $(document).on ("turbolinks:load", function(){
   });
   $(".b1").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/b1.mp3');
+    audioElement.setAttribute('src', '/audio/B1.mp3');
     audioElement.play();
   });
   $(".c2").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/c2.mp3');
+    audioElement.setAttribute('src', '/audio/C2.mp3');
     audioElement.play();
   });
   $(".c2Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/cSharp2.mp3');
+    audioElement.setAttribute('src', '/audio/Db2.mp3');
     audioElement.play();
   });
   $(".d2").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/d2.mp3');
+    audioElement.setAttribute('src', '/audio/D2.mp3');
     audioElement.play();
   });
   $(".d2Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/dSharp2.mp3');
+    audioElement.setAttribute('src', '/audio/Eb2.mp3');
     audioElement.play();
   });
   $(".e2").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/e2.mp3');
+    audioElement.setAttribute('src', '/audio/E2.mp3');
     audioElement.play();
   });
   $(".f2").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/f2.mp3');
+    audioElement.setAttribute('src', '/audio/F2.mp3');
     audioElement.play();
   });
   $(".f2Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/fSharp2.mp3');
+    audioElement.setAttribute('src', '/audio/Gb2.mp3');
     audioElement.play();
   });
   $(".g2").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/g2.mp3');
+    audioElement.setAttribute('src', '/audio/G2.mp3');
     audioElement.play();
   });
   $(".g2Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/gSharp2.mp3');
+    audioElement.setAttribute('src', '/audio/Ab2.mp3');
     audioElement.play();
   });
   $(".a2").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/a2.mp3');
+    audioElement.setAttribute('src', '/audio/A2.mp3');
     audioElement.play();
   });
   $(".a2Sharp").click(function() {
@@ -196,57 +196,57 @@ $(document).on ("turbolinks:load", function(){
   });
   $(".b2").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/b2.mp3');
+    audioElement.setAttribute('src', '/audio/B2.mp3');
     audioElement.play();
   });
   $(".c3").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/c3.mp3');
+    audioElement.setAttribute('src', '/audio/C3.mp3');
     audioElement.play();
   });
   $(".c3Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/cSharp3.mp3');
+    audioElement.setAttribute('src', '/audio/Db3.mp3');
     audioElement.play();
   });
   $(".d3").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/d3.mp3');
+    audioElement.setAttribute('src', '/audio/D3.mp3');
     audioElement.play();
   });
   $(".d3Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/dSharp3.mp3');
+    audioElement.setAttribute('src', '/audio/Eb3.mp3');
     audioElement.play();
   });
   $(".e3").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/e3.mp3');
+    audioElement.setAttribute('src', '/audio/E3.mp3');
     audioElement.play();
   });
   $(".f3").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/f3.mp3');
+    audioElement.setAttribute('src', '/audio/F3.mp3');
     audioElement.play();
   });
   $(".f3Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/fSharp3.mp3');
+    audioElement.setAttribute('src', '/audio/Gb3.mp3');
     audioElement.play();
   });
   $(".g3").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/g3.mp3');
+    audioElement.setAttribute('src', '/audio/G3.mp3');
     audioElement.play();
   });
   $(".g3Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/gSharp3.mp3');
+    audioElement.setAttribute('src', '/audio/Ab3.mp3');
     audioElement.play();
   });
   $(".a3").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/a3.mp3');
+    audioElement.setAttribute('src', '/audio/A3.mp3');
     audioElement.play();
   });
   $(".a3Sharp").click(function() {
@@ -256,57 +256,57 @@ $(document).on ("turbolinks:load", function(){
   });
   $(".b3").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/b3.mp3');
+    audioElement.setAttribute('src', '/audio/B3.mp3');
     audioElement.play();
   });
   $(".c4").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/c4.mp3');
+    audioElement.setAttribute('src', '/audio/C4.mp3');
     audioElement.play();
   });
   $(".c4Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/cSharp4.mp3');
+    audioElement.setAttribute('src', '/audio/Db4.mp3');
     audioElement.play();
   });
   $(".d4").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/d4.mp3');
+    audioElement.setAttribute('src', '/audio/D4.mp3');
     audioElement.play();
   });
   $(".d4Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/dSharp4.mp3');
+    audioElement.setAttribute('src', '/audio/Eb4.mp3');
     audioElement.play();
   });
   $(".e4").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/e4.mp3');
+    audioElement.setAttribute('src', '/audio/E4.mp3');
     audioElement.play();
   });
   $(".f4").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/f4.mp3');
+    audioElement.setAttribute('src', '/audio/F4.mp3');
     audioElement.play();
   });
   $(".f4Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/fSharp4.mp3');
+    audioElement.setAttribute('src', '/audio/Gb4.mp3');
     audioElement.play();
   });
   $(".g4").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/g4.mp3');
+    audioElement.setAttribute('src', '/audio/G4.mp3');
     audioElement.play();
   });
   $(".g4Sharp").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/gSharp4.mp3');
+    audioElement.setAttribute('src', '/audio/Ab4.mp3');
     audioElement.play();
   });
   $(".a4").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/a4.mp3');
+    audioElement.setAttribute('src', '/audio/A4.mp3');
     audioElement.play();
   });
   $(".a4Sharp").click(function() {
@@ -316,7 +316,7 @@ $(document).on ("turbolinks:load", function(){
   });
   $(".b4").click(function() {
     var audioElement = document.createElement('audio');
-    audioElement.setAttribute('src', '/audio/b4.mp3');
+    audioElement.setAttribute('src', '/audio/B4.mp3');
     audioElement.play();
   });
 
