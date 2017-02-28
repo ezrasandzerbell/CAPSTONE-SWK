@@ -29,7 +29,7 @@ $(document).on ("turbolinks:load", function(){
     });
     $(".d").click(function() {
       var audioElement = document.createElement('audio');
-      audioElement.setAttribute('src', '/audio/Gb3.mp3');
+      audioElement.setAttribute('src', '/audio/D3.mp3');
       audioElement.play();
     });
     $(".dSharp").click(function() {
