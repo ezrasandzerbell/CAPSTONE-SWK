@@ -4,7 +4,6 @@ body {
   background-color: black;
   width: 100vw;
   margin-bottom: 20%;
-  color: white;
   a {
     color: white;
     text-decoration: none;
@@ -15,6 +14,10 @@ body {
   a:active {
     color: white;
   }
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  color: white;
 }
 
 
@@ -177,7 +180,6 @@ body {
 //    margin-top: 20px;
 //    font-size: 20px;
 //    margin-left: 6%;
-//    font-family: 'Bungee', cursive;
 //   }
 //
 //  #background_black {
@@ -198,7 +200,6 @@ body {
 //    margin-top: 80px;
 //    background-color: #0099cc;
 //    color: white;
-//    font-family: 'Bungee', cursive;
 //  }
 //
 // .keyboard {
@@ -230,7 +231,6 @@ body {
   color: white;
   border-style: dotted;
   border-width: thin;
-  font-family: 'Bungee', cursive;
   }
 
 .c:hover, .cSharp:hover, .d:hover, .dSharp:hover, .e:hover, .f:hover, .fSharp:hover, .g:hover, .gSharp:hover, .a:hover, .aSharp:hover, .b:hover  {
@@ -241,7 +241,6 @@ body {
   color: white;
   border-style: solid;
   border-width: thin;
-  font-family: 'Bungee', cursive;
 }
 
 .c:active, .cSharp:active, .d:active, .dSharp:active, .e:active, .f:active, .fSharp:active, .g:active, .gSharp:active, .a:active, .aSharp:active, .b:active  {
@@ -250,7 +249,6 @@ body {
   font-size: 24px;
   color: white;
   border-style: solid;
-  font-family: 'Bungee', cursive;
 }
 
 .c, .c:hover, .c:active {
