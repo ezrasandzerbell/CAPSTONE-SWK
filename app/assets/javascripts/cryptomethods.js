@@ -1,15 +1,14 @@
 $(document).on ("turbolinks:load", function(){
   event.preventDefault()
-  $("#start_button").click(function() {
-
-    encrypted_div = $("div#encrypted_div").children().children().children("div")
+  $(".startButton").click(function() {
+    encrypted_div = $(".encrypted_div").children("div")
 
     encrypted_div.each(function(i) {
         var el=$(this);
         setTimeout(function() {
           note = encrypted_div[i];
           note.click();
-        }, i * 500);
+        }, i * 550);
     });
 
 
