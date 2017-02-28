@@ -1,5 +1,6 @@
 $(document).on ("turbolinks:load", function(){
   event.preventDefault()
+  var tempo = 1550
   $(".startButton").click(function() {
     encrypted_div = $(".encrypted_div").children("div")
 
@@ -8,7 +9,7 @@ $(document).on ("turbolinks:load", function(){
         setTimeout(function() {
           note = encrypted_div[i];
           note.click();
-        }, i * 550);
+        }, i * tempo);
     });
 
 
