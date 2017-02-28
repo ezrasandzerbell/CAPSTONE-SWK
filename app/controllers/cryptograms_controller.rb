@@ -1,5 +1,4 @@
 class CryptogramsController < ApplicationController
-
   def new
     @user = current_user
     @song = Song.find(params[:song_id])
@@ -10,6 +9,10 @@ class CryptogramsController < ApplicationController
     @user = current_user
     @song = Song.find(params[:song_id])
     @cryptogram = Cryptogram.new(:word => crypto_params[:word], :song_id => @song.id)
+    @word = @cryptogram.word
+    @cryptogram.definition = @cryptogram.get_words["definition"]
+    @cryptogram.synonyms = @cryptogram.get_words["synonyms"]
+    binding.pry
     @cryptogram.note_array = @cryptogram.musicEncryption
     if @cryptogram.save
       flash[:notice] = "Cryptogram added!"

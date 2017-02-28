@@ -68,16 +68,25 @@
 
 <% if @song.cryptogram %>
 <center><div class="btn btn-primary startButton">Play Melody</div></center>
-  <h2><%= @song.cryptogram.word %> </h2>
+  <h1>Crypto-word: <%= @song.cryptogram.word %></h1>
   <div class="row encrypted_div">
     <% @song.cryptogram.note_array.each do |noteDiv| %>
       <%= noteDiv.html_safe %>
     <% end %>
   </div>
+<br>
+<h1>Definition</h1>
+<p>
+    <%= @song.cryptogram.definition %>
+</p>
+<h1>Synonyms</h1>
+<p>
+  <% @song.cryptogram.synonyms.each do |syn| %>
+    <%= syn %>
+    <br>
+  <% end %>
+</p>
 
-<div class="d">
-  <h1>test</h1>
-</div>
 
   <%= link_to "Back to songbank", songs_path %>
 <br>

@@ -15,6 +15,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'devise'
 gem 'chartkick', '~> 2.2.3'
 gem 'will_paginate'
+gem 'httparty'
 
 group :development, :test do
   gem 'byebug', platform: :mri
