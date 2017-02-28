@@ -220,7 +220,7 @@ p, h1, h2, h3, h4, h5, h6 {
   color: red;
 }
 
-.c, .cSharp, .d, .dSharp, .e, .f, .fSharp, .g, .gSharp, .a, .aSharp, .b {
+.c, .cSharp, .d, .dSharp, .e, .f, .fSharp, .g, .gSharp, .a, .aSharp, .b, .c1, .c1Sharp, .d1, .d1Sharp, .e1, .f1, .f1Sharp, .g1, .g1Sharp, .a1, .a1Sharp, .b1, .c2, .c2Sharp, .d2, .d2Sharp, .e2, .f2, .f2Sharp, .g2, .g2Sharp, .a2, .a2Sharp, .b2, .c3, .c3Sharp, .d3, .d3Sharp, .e3, .f3, .f3Sharp, .g3, .g3Sharp, .a3, .a3Sharp, .b3, .c4, .c4Sharp, .d4, .d4Sharp, .e4, .f4, .f4Sharp, .g4, .g4Sharp, .a4, .a4Sharp, .b4 {
   text-align: center;
   vertical-align: middle;
   font-size: 24px;
@@ -229,7 +229,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-width: thin;
   }
 
-.c:hover, .cSharp:hover, .d:hover, .dSharp:hover, .e:hover, .f:hover, .fSharp:hover, .g:hover, .gSharp:hover, .a:hover, .aSharp:hover, .b:hover  {
+.c:hover, .cSharp:hover, .d:hover, .dSharp:hover, .e:hover, .f:hover, .fSharp:hover, .g:hover, .gSharp:hover, .a:hover, .aSharp:hover, .b:hover, .c1:hover, .c1Sharp:hover, .d1:hover, .d1Sharp:hover, .e1:hover, .f1:hover, .f1Sharp:hover, .g1:hover, .g1Sharp:hover, .a1:hover, .a1Sharp:hover, .b1:hover, .c2:hover, .c2Sharp:hover, .d2:hover, .d2Sharp:hover, .e2:hover, .f2:hover, .f2Sharp:hover, .g2:hover, .g2Sharp:hover, .a2:hover, .a2Sharp:hover, .b2:hover, .c3:hover, .c3Sharp:hover, .d3:hover, .d3Sharp:hover, .e3:hover, .f3:hover, .f3Sharp:hover, .g3:hover, .g3Sharp:hover, .a3:hover, .a3Sharp:hover, .b3:hover, .c4:hover, .c4Sharp:hover, .d4:hover, .d4Sharp:hover, .e4:hover, .f4:hover, .f4Sharp:hover, .g4:hover, .g4Sharp:hover, .a4:hover, .a4Sharp:hover, .b4:hover  {
 
   text-align: center;
   vertical-align: middle;
@@ -239,7 +239,7 @@ p, h1, h2, h3, h4, h5, h6 {
   border-width: thin;
 }
 
-.c:active, .cSharp:active, .d:active, .dSharp:active, .e:active, .f:active, .fSharp:active, .g:active, .gSharp:active, .a:active, .aSharp:active, .b:active  {
+.c:active, .cSharp:active, .d:active, .dSharp:active, .e:active, .f:active, .fSharp:active, .g:active, .gSharp:active, .a:active, .aSharp:active, .b:active, .c1:active, .c1Sharp:active, .d1:active, .d1Sharp:active, .e1:active, .f1:active, .f1Sharp:active, .g1:active, .g1Sharp:active, .a1:active, .a1Sharp:active, .b1:active, .c2:active, .c2Sharp:active, .d2:active, .d2Sharp:active, .e2:active, .f2:active, .f2Sharp:active, .g2:active, .g2Sharp:active, .a2:active, .a2Sharp:active, .b2:active, .c3:active, .c3Sharp:active, .d3:active, .d3Sharp:active, .e3:active, .f3:active, .f3Sharp:active, .g3:active, .g3Sharp:active, .a3:active, .a3Sharp:active, .b3:active, .c4:active, .c4Sharp:active, .d4:active, .d4Sharp:active, .e4:active, .f4:active, .f4Sharp:active, .g4:active, .g4Sharp:active, .a4:active, .a4Sharp:active, .b4:active  {
   text-align: center;
   vertical-align: middle;
   font-size: 24px;
@@ -247,121 +247,131 @@ p, h1, h2, h3, h4, h5, h6 {
   border-style: solid;
 }
 
-.c, .c:hover, .c:active {
+.c, .c:hover, .c:active, .c1, .c1:hover, .c1:active, .c2, .c2:hover, .c2:active, .c3, .c3:hover, .c3:active, .c4, .c4:hover, .c4:active {
   border-color: #ff0000;
 }
 
-.c:active {
+.c:active, .c1:active, .c2:active, .c3:active, .c4:active {
   -webkit-box-shadow:inset 0px 0px 0px 2px #FF0000;
    -moz-box-shadow:inset 0px 0px 0px 2px #FF0000;
    box-shadow:inset 0px 0px 0px 2px #FF0000;
 }
 
-.cSharp, .cSharp:hover, .cSharp:active {
+.cSharp .cSharp:hover, .cSharp:active, .c1Sharp, .c1Sharp:hover, .c1Sharp:active, .c2Sharp, .c2Sharp:hover, .c2Sharp:active, .c3Sharp, .c3Sharp:hover, .c3Sharp:active, .c4Sharp, .c4Sharp:hover, .c4Sharp:active {
+
   border-color: #ff4000;
 }
 
-.cSharp:active {
+.cSharp:active, .cSharp1:active, .cSharp2:active, .cSharp3:active, .cSharp4:active {
   -webkit-box-shadow:inset 0px 0px 0px 2px #ff4000;
    -moz-box-shadow:inset 0px 0px 0px 2px #ff4000;
    box-shadow:inset 0px 0px 0px 2px #ff4000;
 }
 
-.d, .d:hover, .d:active {
+.d, .d:hover, .d:active, .d1, .d1:hover, .d1:active, .d2, .d2:hover, .d2:active, .d3, .d3:hover, .d3:active, .d4, .d4:hover, .d4:active {
   border-color: #ffa500;
 }
 
-.d:active{
+.d:active, .d1:active, .d2:active, .d3:active, .d4:active {
   -webkit-box-shadow:inset 0px 0px 0px 2px #ffa500;
    -moz-box-shadow:inset 0px 0px 0px 2px #ffa500;
    box-shadow:inset 0px 0px 0px 2px #ffa500;
 }
 
-.dSharp, .dSharp:hover, .dSharp:active {
+.dSharp .dSharp:hover, .dSharp:active, .d1Sharp, .d1Sharp:hover, .d1Sharp:active, .d2Sharp, .d2Sharp:hover, .d2Sharp:active, .d3Sharp, .d3Sharp:hover, .d3Sharp:active, .d4Sharp, .d4Sharp:hover, .d4Sharp:active {
+
   border-color: #ffce00;
 }
 
-.dSharp:active {
+.dSharp:active, .dSharp1:active, .dSharp2:active, .dSharp3:active, .dSharp4:active {
   -webkit-box-shadow:inset 0px 0px 0px 2px #ffce00;
    -moz-box-shadow:inset 0px 0px 0px 2px #ffce00;
    box-shadow:inset 0px 0px 0px 2px #ffce00;
 }
 
-.e, .e:hover, .e:active {
+.e, .e:hover, .e:active, .e1, .e1:hover, .e1:active, .e2, .e2:hover, .e2:active, .e3, .e3:hover, .e3:active, .e4, .e4:hover, .e4:active {
+
   border-color: #FFFF00;
 }
 
-.e:active{
+.e:active, .e1:active, .e2:active, .e3:active, .e4:active {
   -webkit-box-shadow:inset 0px 0px 0px 2px #FFFF00;
    -moz-box-shadow:inset 0px 0px 0px 2px #FFFF00;
    box-shadow:inset 0px 0px 0px 2px #FFFF00;
 }
 
-.f, .f:hover, .f:active {
+.f, .f:hover, .f:active, .f1, .f1:hover, .f1:active, .f2, .f2:hover, .f2:active, .f3, .f3:hover, .f3:active, .f4, .f4:hover, .f4:active {
+
   border-color: #bdff00;
 }
 
-.f:active{
+.f:active, .f1:active, .f2:active, .f3:active, .f4:active {
   -webkit-box-shadow:inset 0px 0px 0px 2px #bdff00;
    -moz-box-shadow:inset 0px 0px 0px 2px #bdff00;
    box-shadow:inset 0px 0px 0px 2px #bdff00;
 }
 
-.fSharp, .fSharp:hover, .fSharp:active {
+.fSharp, .fSharp:hover, .fSharp:active, .f1Sharp, .f1Sharp:hover, .f1Sharp:active, .f2Sharp, .f2Sharp:hover, .f2Sharp:active, .f3Sharp, .f3Sharp:hover, .f3Sharp:active, .f4Sharp, .f4Sharp:hover, .f4Sharp:active {
   border-color: #008000;
 }
 
-.fSharp:active {
+.fSharp:active, .f1Sharp:active, .f2Sharp:active, .f3Sharp:active, .f4Sharp:active {
+
   -webkit-box-shadow:inset 0px 0px 0px 2px #008000;
    -moz-box-shadow:inset 0px 0px 0px 2px #008000;
    box-shadow:inset 0px 0px 0px 2px #008000;
 }
 
-.g, .g:hover, .g:active {
+.g, .g:hover, .g:active, .g1, .g1:hover, .g1:active, .g2, .g2:hover, .g2:active, .g3, .g3:hover, .g3:active, .g4, .g4:hover, .g4:active {
+
   border-color: #0fbfa9;
 }
 
-.g:active{
+.g:active, .g1:active, .g2:active, .g3:active, .g4:active {
   -webkit-box-shadow:inset 0px 0px 0px 2px #0fbfa9;
    -moz-box-shadow:inset 0px 0px 0px 2px #0fbfa9;
    box-shadow:inset 0px 0px 0px 2px #0fbfa9;
 }
 
-.gSharp, .gSharp:hover, .gSharp:active {
+.gSharp, .gSharp:hover, .gSharp:active, .g1Sharp, .g1Sharp:hover, .g1Sharp:active, .g2Sharp, .g2Sharp:hover, .g2Sharp:active, .g3Sharp, .g3Sharp:hover, .g3Sharp:active, .g4Sharp, .g4Sharp:hover, .g4Sharp:active {
+
   border-color: #0000ff;
 }
 
-.gSharp:active {
+.gSharp:active, .g1Sharp:active, .g2Sharp:active, .g3Sharp:active, .g4Sharp:active {
   -webkit-box-shadow:inset 0px 0px 0px 2px #0000ff;
    -moz-box-shadow:inset 0px 0px 0px 2px #0000ff;
    box-shadow:inset 0px 0px 0px 2px #0000ff;
 }
 
-.a, .a:hover, .a:active {
+.a, .a:hover, .a:active, .a1, .a1:hover, .a1:active, .a2, .a2:hover, .a2:active, .a3, .a3:hover, .a3:active, .a4, .a4:hover, .a4:active {
+
   border-color: #4b0082;
 }
 
-.a:active{
+.a:active, .a1:active, .a2:active, .a3:active, .a4:active {
   -webkit-box-shadow:inset 0px 0px 0px 2px #4b0082;
    -moz-box-shadow:inset 0px 0px 0px 2px #4b0082;
    box-shadow:inset 0px 0px 0px 2px #4b0082;
 }
 
-.aSharp, .aSharp:hover, .aSharp:active {
+.aSharp, .aSharp:hover, .aSharp:active, .a1Sharp, .a1Sharp:hover, .a1Sharp:active, .a2Sharp, .a2Sharp:hover, .a2Sharp:active, .a3Sharp, .a3Sharp:hover, .a3Sharp:active, .a4Sharp, .a4Sharp:hover, .a4Sharp:active {
+
   border-color: #ab6bfd;
 }
 
-.aSharp:active {
+.aSharp:active, .a1Sharp:active, .a2Sharp:active, .a3Sharp:active, .a4Sharp:active {
   -webkit-box-shadow:inset 0px 0px 0px 2px #ab6bfd;
    -moz-box-shadow:inset 0px 0px 0px 2px #ab6bfd;
    box-shadow:inset 0px 0px 0px 2px #ab6bfd;
 }
 
-.b, .b:hover, .b:active {
+.b, .b:hover, .b:active, .b1, .b1:hover, .b1:active, .b2, .b2:hover, .b2:active, .b3, .b3:hover, .b3:active, .b4, .b4:hover, .b4:active {
+
   border-color: #ee82ee;
 }
 
-.b:active{
+.b:active, .b1:active, .b2:active, .b3:active, .b4:active {
   -webkit-box-shadow:inset 0px 0px 0px 2px #ee82ee;
    -moz-box-shadow:inset 0px 0px 0px 2px #ee82ee;
    box-shadow:inset 0px 0px 0px 2px #ee82ee;

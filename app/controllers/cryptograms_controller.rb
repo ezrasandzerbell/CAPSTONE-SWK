@@ -12,7 +12,6 @@ class CryptogramsController < ApplicationController
     @word = @cryptogram.word
     @cryptogram.definition = @cryptogram.get_words["definition"]
     @cryptogram.synonyms = @cryptogram.get_words["synonyms"]
-    binding.pry
     @cryptogram.note_array = @cryptogram.musicEncryption
     if @cryptogram.save
       flash[:notice] = "Cryptogram added!"
