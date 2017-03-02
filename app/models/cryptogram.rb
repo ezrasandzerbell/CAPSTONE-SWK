@@ -50,7 +50,7 @@ class Cryptogram < ActiveRecord::Base
       definitionArray = []
       response = HTTParty.get("https://wordsapiv1.p.mashape.com/words/" + self.word,
         headers:{
-          "X-Mashape-Key" => "uyBV6GjxIomshhoQwaFdf5Gu017Ip1QgUNhjsntMz0LsypvDbj",
+          "X-Mashape-Key" => ENV["API_KEY"],
           "Accept" => "application/json"
         })
         if response.parsed_response["results"].kind_of?(Array)
