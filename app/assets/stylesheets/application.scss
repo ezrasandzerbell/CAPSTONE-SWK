@@ -98,123 +98,17 @@ p, h1, h2, h3, h4, h5, h6 {
   float: right;
 }
 
-// This area begins import of MCIPHER
-
-// body {
-//   background-color: black;
-// }
-//
-// .formatbody {
-//
-//   /* black background for body */
-//   padding-top: 150px;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   overflow: auto;
-//   background: black;
-//
-//   /* Font styling */
-//
-//   color: white;
-//
-// }
-//
-// .formatbody img {
-//   margin-left: 5%;
-// }
-//
-//
-//
-//
-// .title_text:hover {
-//     text-decoration: none;
-// }
-//
-// h1 {
-//   vertical-align: top;
-// }
-//
-// #resizeImage {
-//   height: 450px;
-// }
-//
-// #resizeTitle {
-//   width: 900px;
-// }
-//
-// .fontResize {
-//   font-size: 25px;
-// }
-//
-// .bottomButton {
-//   margin-bottom: 50px;
-// }
-//
-//  .p_format {
-//    font-family: sans-serif;
-//    font-size: 24px;
-//  }
-//
-//  .body_text {
-//    color: white;
-//  }
-//
-//  .bottom_of_page {
-//    padding-bottom: 40px;
-//    text-align: center;
-//    font-size: 20px;
-//  }
-//
-//  .white_text {
-//    color: white;
-//  }
-//
-//  .visit_page_font {
-//    margin-top: 20px;
-//    font-size: 20px;
-//    margin-left: 6%;
-//   }
-//
-//  #background_black {
-//    background-color: #000000;
-//    text-align: justify;
-//  }
-//
-//  .blue_text {
-//    color: white;
-//    font-size: 20px;
-//  }
-//
-//  #resize_tone_color_table {
-//    width: 80%;
-//  }
-//
-//  .keyboard_header {
-//    margin-top: 80px;
-//    background-color: #0099cc;
-//    color: white;
-//  }
-//
-// .keyboard {
-//   margin-top: 80px;
-//   background-color: white;
-//   width: 800px;
-//   color: black;
-// }
-//
-// .tone_color_keys {
-//   background-color: black;
-//   color: white;
-// }
-//
-// #footer {
-//   width: 1000px;
-// }
-//
-//
+.notepad {
+  background-image: url('yellow_pad.png');
+  height: 1000px;
+  p {
+    color: black;
+    font-size: 23px;
+    padding-left: 13%;
+    padding-right: 20%;
+    padding-top: 9%;
+  }
+}
 
 .c {
   color: red;

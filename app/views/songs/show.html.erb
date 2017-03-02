@@ -75,7 +75,7 @@
     <% end %>
   </div>
 <br>
-<% if @song.cryptogram.definition %>
+<% if @song.cryptogram.definition && @song.cryptogram.synonyms != [] %>
   <h1>Definition</h1>
   <p><% @song.cryptogram.definition.each do |definition| %>
   <%= definition %>
@@ -83,7 +83,7 @@
   <% end %>
   </p>
 <% end %>
-<% if @song.cryptogram.synonyms %>
+<% if @song.cryptogram.synonyms && @song.cryptogram.synonyms != [] %>
   <h1>Synonyms</h1>
   <p><% @song.cryptogram.synonyms.each do |syn| %>
       <%= syn %>
@@ -96,4 +96,18 @@
 <br>
 <% else %>
   <%= link_to "Create a cryptogram", new_song_cryptogram_path(@song) %>
+<% end %>
+
+<% if @song.thoughts %>
+  <h1>Lyrics:</h1>
+  <div class="notepad">
+    <p><%= @song.thoughts %></p>
+  </div>
+
+<% else %>
+  <%= form_for [@user, @song] do |f| %>
+    <%= f.label :thoughts,'Song Lyrics / Thoughts', style: "color: white;"%>
+    <%= f.text_field :thoughts %>
+    <%= f.submit %>
+  <% end %>
 <% end %>

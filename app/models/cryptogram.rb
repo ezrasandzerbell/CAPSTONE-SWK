@@ -53,11 +53,13 @@ class Cryptogram < ActiveRecord::Base
           "X-Mashape-Key" => "uyBV6GjxIomshhoQwaFdf5Gu017Ip1QgUNhjsntMz0LsypvDbj",
           "Accept" => "application/json"
         })
-      response.parsed_response["results"].each do |result|
-        if result["definition"]
-        definitionArray.push(result["definition"])
+        if response.parsed_response["results"].kind_of?(Array)
+          response.parsed_response["results"].each do |result|
+            if result["definition"]
+            definitionArray.push(result["definition"])
+            end
+          end
         end
-      end
       return definitionArray
     end
 
@@ -68,10 +70,12 @@ class Cryptogram < ActiveRecord::Base
           "X-Mashape-Key" => ENV["API_KEY"],
           "Accept" => "application/json"
         })
-      response.parsed_response["results"].each do |result|
-        if result["synonyms"]
-          result["synonyms"].each do |syn|
-            synonymArray.push(syn)
+      if response.parsed_response["results"].kind_of?(Array)
+        response.parsed_response["results"].each do |result|
+          if result["synonyms"]
+            result["synonyms"].each do |syn|
+              synonymArray.push(syn)
+            end
           end
         end
       end
