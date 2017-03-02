@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228193418) do
+ActiveRecord::Schema.define(version: 20170302163700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20170228193418) do
     t.string  "card_array",   array: true
     t.string  "chord_array",  array: true
     t.integer "song_id"
-    t.string  "definition"
     t.string  "synonyms",     array: true
+    t.string  "definition",   array: true
   end
 
   create_table "songs", force: :cascade do |t|

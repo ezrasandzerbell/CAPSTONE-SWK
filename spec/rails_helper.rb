@@ -12,6 +12,8 @@ require 'support/factory_girl'
 require 'support/shared_db_connection'
 require 'unirest'
 require 'httparty'
+require 'dotenv/rails-now'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

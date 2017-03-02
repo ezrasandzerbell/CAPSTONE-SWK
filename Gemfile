@@ -16,6 +16,7 @@ gem 'devise'
 gem 'chartkick', '~> 2.2.3'
 gem 'will_paginate'
 gem 'httparty'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

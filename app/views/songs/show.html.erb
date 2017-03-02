@@ -75,18 +75,22 @@
     <% end %>
   </div>
 <br>
-<h1>Definition</h1>
-<p>
-    <%= @song.cryptogram.definition %>
-</p>
-<h1>Synonyms</h1>
-<p>
-  <% @song.cryptogram.synonyms.each do |syn| %>
-    <%= syn %>
-    <br>
+<% if @song.cryptogram.definition %>
+  <h1>Definition</h1>
+  <p><% @song.cryptogram.definition.each do |definition| %>
+  <%= definition %>
+  <br>
   <% end %>
-</p>
-
+  </p>
+<% end %>
+<% if @song.cryptogram.synonyms %>
+  <h1>Synonyms</h1>
+  <p><% @song.cryptogram.synonyms.each do |syn| %>
+      <%= syn %>
+      <br>
+    <% end %>
+  </p>
+<% end %>
 
   <%= link_to "Back to songbank", songs_path %>
 <br>
