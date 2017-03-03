@@ -81,6 +81,44 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.home_song_tile {
+  border-style: solid;
+  border-color: white;
+  border-width: medium;
+  height: 20vw;
+  background-size: 30vh 20vw;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.create_crypto {
+  background-image: url('newcryptomandala.png');
+  width: 500px;
+  height: 500px;
+  margin-left: 50%;
+  transform: translate(-50%, 0%);
+  background-size:cover;
+}
+
+.align_form {
+  padding-top: 44%;
+  padding-left: 36%;
+  height: 40px;
+}
+
+.home_song_text {
+  background-color: black;
+  color: white;
+  border-color: white;
+  border-style: groove;
+  top: 15px;
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 15%;
+  margin-top: 5%;
+
+}
+
 .centerText {
   text-align: center;
 }

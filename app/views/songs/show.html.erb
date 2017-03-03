@@ -1,16 +1,13 @@
-<h1><%= @song.title %></h1>
 
-<% if @song.avatar %>
-  <%= image_tag(@song.avatar) %>
-<% end %>
-<%= form_for [@user, @song], url: user_song_path(@user, @song), html: { method: :put } do |form| %>
-  <%= form.label :avatar, 'Upload Song Image', style: "color: white;" %>
-  <%= form.file_field :avatar %>
-  <%= form.submit "Update" %>
-<% end %>
-
-
-<center><h1>Keyboard Map</h1></center>
+<center><h1><%= @song.title %></h1>
+<p>
+  <%= form_for [@user, @song], url: user_song_path(@user, @song), html: { method: :put } do |form| %>
+    <%= form.label :avatar, 'Upload Song Image', style: "color: white;" %>
+    <%= form.file_field :avatar, style: "color: white;"  %>
+    <%= form.submit "Update" %>
+  <% end %>
+</p>
+<h1>Keyboard Map</h1></center>
 <br>
 <center><h4>These four keyboard rows have been assigned to four octaves of notes of a piano. </h4></center>
 <br><br>
