@@ -11,6 +11,7 @@ class Song < ActiveRecord::Base
   validates_attachment_content_type :song_audio, :content_type => [ 'audio/mpeg' ]
 
   has_attached_file :sheet_music
+  validates_attachment_content_type :sheet_music, content_type: /\Aimage\/.*\z/
 
 
 end

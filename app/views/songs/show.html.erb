@@ -14,7 +14,8 @@
 
     <div class="row centerIcons">
       <%= link_to image_tag('add_img.jpg'), user_song_path(@user, @song), id: "addImage", remote: true %>
-
+      <%= link_to image_tag("sheet_music_icon.png"), user_song_path(@user, @song), id: "addSheetMusic", remote: true %>
+      <%= link_to image_tag("song_audio_icon.png"), user_song_path(@user, @song), id: "addSongAudio", remote: true %>
       <%= link_to image_tag('take_note.jpg'), user_song_path(@user, @song), id: "addThoughts", remote: true %>
     </div>
 
@@ -43,6 +44,24 @@
 
     </div>
 
+    <div id="sheet_music_form" style="margin-left: 36%;">
+      <%= form_for [@user, @song], url: user_song_path(@user, @song), html: { method: :put } do |form| %>
+        <%= form.label :sheet_music, 'Upload Sheet Music Image', style: "font-size: 18px; color: white; margin-left: 5%;" %>
+        <%= form.file_field :sheet_music, style: "color: white;  margin-left: 5%;" %>
+        <br>
+        <%= form.submit "Update", class: "btn"%><button class="btn" id="hide_sheet_music_form">Cancel</button>
+      <% end %>
+    </div>
+
+    <div id="song_audio_form" style="margin-left: 36%;">
+      <%= form_for [@user, @song], url: user_song_path(@user, @song), html: { method: :put } do |form| %>
+        <%= form.label :song_audio, 'Upload Song Audio', style: "font-size: 18px; color: white; margin-left: 5%;" %>
+        <%= form.file_field :song_audio, style: "color: white;  margin-left: 5%;" %>
+        <br>
+        <%= form.submit "Update", class: "btn"%><button class="btn" id="hide_sheet_music_form">Cancel</button>
+      <% end %>
+    </div>
+
     <div style="text-align: center;">
       <h1>Musical Cryptogram <span class="startButton"> <%= image_tag('playbtn.jpg') %> </span></h1>
     </div>
@@ -62,10 +81,17 @@
       <br>
   <% end %>
 
+  <% if @song.sheet_music %>
+      <div class="centerIcons">
+        <%= image_tag(@song.sheet_music, style: "width: 700px;") %>
+      </div>
+      <br>
+      <br>
+  <% end %>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- This area is for API calls (WORDS API) -->
 
-
-
-  <% if @song.cryptogram.definition && @song.cryptogram.synonyms != [] %>
+  <!-- <% if @song.cryptogram.definition && @song.cryptogram.synonyms != [] %>
     <h1>Definition</h1>
     <% @song.cryptogram.definition.each do |definition| %>
     <p><%= definition %></p>
@@ -80,7 +106,6 @@
         <br>
       <% end %>
     </p>
-  <% end %>
+  <% end %> -->
   <br>
 </div>
-<br><br><br><br><br>
