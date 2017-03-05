@@ -5,10 +5,11 @@
 
     <!-- Title and Image -->
     <div style="text-align: center; font-size: 80px; color: white;"><%= @song.title%></div>
-    <div class="centerIcons">
-      <%= image_tag(@song.avatar, style: "height: 300px") %>
-    </div>
-
+    <% if @song.avatar  %>
+      <div class="centerIcons">
+        <%= image_tag(@song.avatar, style: "height: 300px") %>
+      </div>
+    <% end %>
     <!-- Upload Photo / Play Cryptogram / Write Notes -->
 
     <div class="row centerIcons">
