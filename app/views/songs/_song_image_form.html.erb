@@ -1,0 +1,4 @@
+<%= form_for [@user, @song], url: user_song_path(@user, @song), html: { method: :put } do |form| %>
+  <%= form.label :avatar, 'Upload Song Image', style: "color: white;" %>
+  <%= form.file_field :avatar %>
+  <%= form.submit "Update" %>

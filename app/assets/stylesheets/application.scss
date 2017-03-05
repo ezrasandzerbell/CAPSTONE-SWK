@@ -21,6 +21,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
+
 .page-header {
   display: flex;
     flex-direction: row;
@@ -38,7 +39,12 @@ p, h1, h2, h3, h4, h5, h6 {
    padding: 3%;
 }
 
+.nobullets {
+  list-style: none;
+}
+
 .page-footer {
+  background-color: black;
   position: fixed;
   bottom: 0;
   width: 100vw;
@@ -91,6 +97,30 @@ p, h1, h2, h3, h4, h5, h6 {
   background-size:cover;
 }
 
+#song_image_form {
+  display: none;
+}
+
+#song_thoughts_form {
+  display: none;
+}
+
+.cryptoWrapper {
+  border-style: solid;
+  border-color: white;
+  border-width: medium;
+  padding: 20px;
+}
+
+.container {
+  margin-left: 5%;
+  width: 90vw;
+}
+
+.startButton:hover {
+  cursor: pointer;
+}
+
 .create_crypto {
   background-image: url('newcryptomandala.png');
   width: 500px;
@@ -100,13 +130,34 @@ p, h1, h2, h3, h4, h5, h6 {
   background-size:cover;
 }
 
+.encrypted_div {
+  border-style: solid;
+  border-color: white;
+  border-width: medium;
+  padding: 20px;
+  margin: 20px;
+}
+
+.centerIcons {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerForm {
+  margin-left: 40%;
+}
+
 .align_form {
   padding-top: 44%;
   padding-left: 36%;
   height: 40px;
 }
 
+
 .home_song_text {
+  
   background-color: black;
   color: white;
   border-color: white;
@@ -116,7 +167,9 @@ p, h1, h2, h3, h4, h5, h6 {
   padding-right: 5%;
   height: 15%;
   margin-top: 5%;
-
+  p {
+    font-size: 90%;
+  }
 }
 
 .centerText {
@@ -146,6 +199,16 @@ p, h1, h2, h3, h4, h5, h6 {
     padding-right: 20%;
     padding-top: 9%;
   }
+}
+
+.keyboard {
+  width: 85vw;
+  height: 5vw;
+  background-image: url('piano88.png');
+  background-color: transparent;
+}
+
+.musicStaff {
 }
 
 .c {
@@ -210,7 +273,7 @@ p, h1, h2, h3, h4, h5, h6 {
    box-shadow:inset 0px 0px 0px 2px #ffa500;
 }
 
-.dSharp .dSharp:hover, .dSharp:active, .d1Sharp, .d1Sharp:hover, .d1Sharp:active, .d2Sharp, .d2Sharp:hover, .d2Sharp:active, .d3Sharp, .d3Sharp:hover, .d3Sharp:active, .d4Sharp, .d4Sharp:hover, .d4Sharp:active {
+.dSharp, .dSharp:hover, .dSharp:active, .d1Sharp, .d1Sharp:hover, .d1Sharp:active, .d2Sharp, .d2Sharp:hover, .d2Sharp:active, .d3Sharp, .d3Sharp:hover, .d3Sharp:active, .d4Sharp, .d4Sharp:hover, .d4Sharp:active {
 
   border-color: #ffce00;
 }
@@ -304,6 +367,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .b:active, .b1:active, .b2:active, .b3:active, .b4:active, .bActive {
   -webkit-box-shadow:inset 0px 0px 0px 2px #ee82ee;
-   -moz-box-shadow:inset 0px 0px 0px 2px #ee82ee;
-   box-shadow:inset 0px 0px 0px 2px #ee82ee;
+  -moz-box-shadow:inset 0px 0px 0px 2px #ee82ee;
+  box-shadow:inset 0px 0px 0px 2px #ee82ee;
 }

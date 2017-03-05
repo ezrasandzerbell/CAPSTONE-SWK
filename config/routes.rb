@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :songs do
     resources :cryptograms
   end
+
+  get '/keyboard', to: 'cryptokeyboard#index', as: 'keyboard'
 end

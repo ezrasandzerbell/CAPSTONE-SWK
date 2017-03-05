@@ -4,11 +4,8 @@
 
     <title>Songwriter's Key</title>
     <%= csrf_meta_tags %>
-    <script
-  src="https://code.jquery.com/jquery-1.12.4.min.js"
-  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-  crossorigin="anonymous"></script>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
@@ -35,20 +32,18 @@
 
     <div class="page-footer">
       <div class="row">
-        <div class="col s4 m4 l4">
-          <ul>
+              <a href="/"><%= image_tag("home_icon.png") %></a>
             <% if current_user %>
-              <li><%= current_user.email %></li>
-            <% end %>
-              <li><a href="/" class=" logo-size">Home Page</a></li>
-            <% if current_user %>
-              <li><%= link_to "Songbank", songs_path, :class => 'main-links' %></li>
-              <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
+              <%= link_to image_tag("song_bank_footer_icon.png"), songs_path, :class => 'main-links' %>
+              <%= link_to image_tag("log_out_icon.png"), destroy_user_session_path, method: "delete" %>
             <% else %>
-              <li>  <%= link_to "Log-in", new_user_session_path %> | <%= link_to "Signup", new_user_registration_path %></li>
+                <%= link_to image_tag("log_in_icon.png"), new_user_session_path %>
+                <%= link_to image_tag("new_user_icon.png"), new_user_registration_path %>
             <% end %>
-          </ul>
-        </div>
+            <%= link_to image_tag("keyboard_icon.png"), keyboard_path %>
+            <%= link_to "https://www.noteflight.com/login", target: :_blank do  %>
+            <%= image_tag("sheet_music_icon.png") %>
+            <% end %>
       </div>
     </div>
 

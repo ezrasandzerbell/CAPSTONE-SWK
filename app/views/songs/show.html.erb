@@ -1,94 +1,76 @@
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
-<center><h1><%= @song.title %></h1>
-<p>
-  <%= form_for [@user, @song], url: user_song_path(@user, @song), html: { method: :put } do |form| %>
-    <%= form.label :avatar, 'Upload Song Image', style: "color: white;" %>
-    <%= form.file_field :avatar, style: "color: white;"  %>
-    <%= form.submit "Update" %>
-  <% end %>
-</p>
-<h1>Keyboard Map</h1></center>
-<br>
-<center><h4>These four keyboard rows have been assigned to four octaves of notes of a piano. </h4></center>
-<br><br>
-<div class="tone_color_keys">
-  <div class="row">
-    <div class="col-md-1 c4">1</div>
-    <div class="col-md-1 c4Sharp">2</div>
-    <div class="col-md-1 d4">3</div>
-    <div class="col-md-1 d4Sharp">4</div>
-    <div class="col-md-1 e4">5</div>
-    <div class="col-md-1 f4">6</div>
-    <div class="col-md-1 f4Sharp">7</div>
-    <div class="col-md-1 g4">8</div>
-    <div class="col-md-1 g4Sharp">9</div>
-    <div class="col-md-1 a4">0</div>
-    <div class="col-md-1 a4Sharp">-</div>
-    <div class="col-md-1 b4">=</div>
-  </div>
-  <div class="row">
-    <div class="col-md-1 c3">q</div>
-    <div class="col-md-1 c3Sharp">w</div>
-    <div class="col-md-1 d3">e</div>
-    <div class="col-md-1 d3Sharp">r</div>
-    <div class="col-md-1 e3">t</div>
-    <div class="col-md-1 f3">y</div>
-    <div class="col-md-1 f3Sharp">u</div>
-    <div class="col-md-1 g3">i</div>
-    <div class="col-md-1 g3Sharp">o</div>
-    <div class="col-md-1 a3">p</div>
-    <div class="col-md-1 a3Sharp">[</div>
-    <div class="col-md-1 b3">]</div>
-  </div>
-  <div class="row">
-    <div class="col-md-1 c2">a</div>
-    <div class="col-md-1 c2Sharp">s</div>
-    <div class="col-md-1 d2">d</div>
-    <div class="col-md-1 d2Sharp">f</div>
-    <div class="col-md-1 e2">g</div>
-    <div class="col-md-1 f2">h</div>
-    <div class="col-md-1 f2Sharp">j</div>
-    <div class="col-md-1 g2">k</div>
-    <div class="col-md-1 g2Sharp">l</div>
-    <div class="col-md-1 a2">;</div>
-    <div class="col-md-1 a2Sharp">'</div>
-    <div class="col-md-1 b2">Ent</div>
-  </div>
-  <div class="row">
-    <div class="col-md-1 c1">z</div>
-    <div class="col-md-1 c1Sharp">x</div>
-    <div class="col-md-1 d1">c</div>
-    <div class="col-md-1 d1Sharp">v</div>
-    <div class="col-md-1 e1">b</div>
-    <div class="col-md-1 f1">n</div>
-    <div class="col-md-1 f1Sharp">m</div>
-    <div class="col-md-1 g1">,</div>
-    <div class="col-md-1 g1Sharp">.</div>
-    <div class="col-md-1 a1">/</div>
-    <div class="col-md-1 a1Sharp"><</div>
-    <div class="col-md-1 b1">></div>
-  </div>
-</div>
-<br>
-<center><input type="text" class="keyboard" placeholder="Click here to use keyboard"></center>
- <br>
+  <div class="cryptoWrapper">
 
-<% if @song.cryptogram %>
-  <center><div class="btn btn-primary startButton">Play Melody</div></center>
-    <h1>Crypto-word: <%= @song.cryptogram.word %></h1>
+    <!-- Title and Image -->
+    <div style="text-align: center; font-size: 80px; color: white;"><%= @song.title%></div>
+    <div class="centerIcons">
+      <%= image_tag(@song.avatar, style: "height: 300px") %>
+    </div>
+
+    <!-- Upload Photo / Play Cryptogram / Write Notes -->
+
+    <div class="row centerIcons">
+      <%= link_to image_tag('add_img.jpg'), user_song_path(@user, @song), id: "addImage", remote: true %>
+
+      <%= link_to image_tag('take_note.jpg'), user_song_path(@user, @song), id: "addThoughts", remote: true %>
+    </div>
+
+    <!-- Update-Forms -->
+
+    <div id="song_thoughts_form">
+      <%= form_for [@user, @song] do |f| %>
+        <div class="input-field">
+          <%= f.label :thoughts,'Song Lyrics / Thoughts', style: "color: white; margin-left: 40%;"%>
+          <%= f.text_area :thoughts, style: "color: white;", class: "materialize-textarea" %>
+          <br>
+          <span style="margin-left: 34%;"><%= f.submit class: "btn"%><button class="btn" id="hide_thoughts_form">Cancel</button></span>
+        </div>
+
+      <% end %>
+
+    </div>
+
+    <div id="song_image_form" style="margin-left: 36%;">
+      <%= form_for [@user, @song], url: user_song_path(@user, @song), html: { method: :put } do |form| %>
+        <%= form.label :avatar, 'Upload Song Image', style: "font-size: 18px; color: white; margin-left: 5%;" %>
+        <%= form.file_field :avatar, style: "color: white;  margin-left: 5%;" %>
+        <br>
+        <%= form.submit "Update", class: "btn"%><button class="btn" id="hide_song_form">Cancel</button>
+      <% end %>
+
+    </div>
+
+    <div style="text-align: center;">
+      <h1>Musical Cryptogram <span class="startButton"> <%= image_tag('playbtn.jpg') %> </span></h1>
+    </div>
     <div class="row encrypted_div">
       <% @song.cryptogram.note_array.each do |noteDiv| %>
         <%= noteDiv.html_safe %>
       <% end %>
+      <br>
+      <br>
     </div>
-  <br>
+  <% if @song.thoughts %>
+      <h1 style="text-align: center;">Lyrics / Song Notes:</h1>
+      <div  class="encrypted_div" >
+        <p><%= @song.thoughts %></p>
+      </div>
+      <br>
+      <br>
+  <% end %>
+
+
+
+
   <% if @song.cryptogram.definition && @song.cryptogram.synonyms != [] %>
     <h1>Definition</h1>
-    <p><% @song.cryptogram.definition.each do |definition| %>
-    <%= definition %>
+    <% @song.cryptogram.definition.each do |definition| %>
+    <p><%= definition %></p>
     <br>
+
     <% end %>
-    </p>
   <% end %>
   <% if @song.cryptogram.synonyms && @song.cryptogram.synonyms != [] %>
     <h1>Synonyms</h1>
@@ -98,22 +80,6 @@
       <% end %>
     </p>
   <% end %>
-
-  <%= link_to "Back to songbank", songs_path %>
   <br>
-<% else %>
-  <%= link_to "Create a cryptogram", new_song_cryptogram_path(@song) %>
-<% end %>
-
-<% if @song.thoughts %>
-  <h1>Lyrics:</h1>
-  <div class="notepad">
-    <p><%= @song.thoughts %></p>
-  </div>
-<% else %>
-  <%= form_for [@user, @song] do |f| %>
-    <%= f.label :thoughts,'Song Lyrics / Thoughts', style: "color: white;"%>
-    <%= f.text_field :thoughts %>
-    <%= f.submit %>
-  <% end %>
-<% end %>
+</div>
+<br><br><br><br><br>

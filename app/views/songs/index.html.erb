@@ -9,8 +9,8 @@
       </div>
       <% @user.songs.each do |song| %>
         <div class="col-md-3 home_song_tile" style="background-image: url('<%= song.avatar %>');">
-          <div class="home_song_text">
-            <h4 style="text-align: center;"><%= link_to song.title, user_song_path(@user, song) %></h4>
+          <div class="home_song_text" style="text-align: center; font-size: 1.5em;">
+            <%= link_to song.title, user_song_path(@user, song)%>
           </div>
         </div>
       <% end %>

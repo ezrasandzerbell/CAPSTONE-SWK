@@ -14,8 +14,19 @@ class SongsController < ApplicationController
     @user = current_user
     @song = Song.new(:title => song_params[:title], :user_id => @user.id)
     if @song.save
-      flash[:notice] = "Song added!"
-      redirect_to user_songs_path(@user)
+      @cryptogram = Cryptogram.new(:word => song_params[:title], :song_id => @song.id)
+      @word = @cryptogram.word
+      @cryptogram.definition = @cryptogram.get_definition
+      @cryptogram.synonyms = @cryptogram.get_synonym
+      @cryptogram.note_array = @cryptogram.musicEncryption
+      if @cryptogram.save
+        flash[:notice] = "Cryptogram added!"
+        redirect_to user_song_path(@user, @song)
+      else
+        flash[:notice] = "Song not added!"
+        render :new
+      end
+
     else
       flash[:notice] = "Song not added!"
       render :new
@@ -25,6 +36,7 @@ class SongsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @song = Song.find(params[:id])
+
   end
 
   def edit
@@ -35,8 +47,11 @@ class SongsController < ApplicationController
   def update
     @user = User.find(params[:user_id])
     @song = Song.find(params[:id])
-    if song_params[:title] != "" && @song.update(song_params)
-      flash[:notice] = "You updated your song"
+    if @song.update(song_params)
+      respond_to do |format|
+        format.html { redirect_to user_song_path(@user, @song) }
+        format.js
+      end
     else
       flash[:notice] = 'nope'
       redirect_to :edit
