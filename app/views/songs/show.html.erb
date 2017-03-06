@@ -12,6 +12,9 @@
     <% end %>
     <!-- Upload Photo / Play Cryptogram / Write Notes -->
 
+    <% if @song.song_audio %>
+      <span  class="page-header" ><audio src="<%= @song.song_audio %>" type="audio/mpeg" controls>Your browser does not support the audio element.</audio> <br><br></span>
+    <% end %>
     <div class="row centerIcons">
       <%= link_to image_tag('add_img.jpg'), user_song_path(@user, @song), id: "addImage", remote: true %>
       <%= link_to image_tag("sheet_music_icon.png"), user_song_path(@user, @song), id: "addSheetMusic", remote: true %>
