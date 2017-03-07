@@ -28,7 +28,7 @@
       <%= form_for [@song, @riff] do |f| %>
         <div class="input-field">
           <%= f.label :thoughts,'Song Lyrics / Thoughts', style: "color: white; margin-left: 40%;"%>
-          <%= f.text_area :thoughts, style: "color: white;", class: "materialize-textarea" %>
+          <%= f.text_area :thoughts, style: "color: white;", class: "materialize-textarea", :required => 'required' %>
           <br>
           <span style="margin-left: 34%;"><%= f.submit class: "btn"%><button class="btn" id="hide_thoughts_form">Cancel</button></span>
         </div>
@@ -40,7 +40,7 @@
     <div id="riff_image_form" style="margin-left: 36%;">
       <%= form_for [@song, @riff], url: song_riff_path(@song, @riff), html: { method: :put } do |form| %>
         <%= form.label :avatar, 'Upload Song Image', style: "font-size: 18px; color: white; margin-left: 5%;" %>
-        <%= form.file_field :avatar, style: "color: white;  margin-left: 5%;" %>
+        <%= form.file_field :avatar, style: "color: white;  margin-left: 5%;", :required => 'required'  %>
         <br>
         <%= form.submit "Update", class: "btn"%><button class="btn" id="hide_riff_form">Cancel</button>
       <% end %>
@@ -50,7 +50,7 @@
     <div id="sheet_music_form" style="margin-left: 36%;">
       <%= form_for [@song, @riff], url: song_riff_path(@song, @riff), html: { method: :put } do |form| %>
         <%= form.label :sheet_music, 'Upload Sheet Music Image', style: "font-size: 18px; color: white; margin-left: 5%;" %>
-        <%= form.file_field :sheet_music, style: "color: white;  margin-left: 5%;" %>
+        <%= form.file_field :sheet_music, style: "color: white;  margin-left: 5%;", :required => 'required'  %>
         <br>
         <%= form.submit "Update", class: "btn"%><button class="btn" id="hide_sheet_music_form">Cancel</button>
       <% end %>
@@ -59,7 +59,7 @@
     <div id="song_audio_form" style="margin-left: 36%;">
       <%= form_for [@song, @riff], url: song_riff_path(@song, @riff), html: { method: :put } do |form| %>
         <%= form.label :song_audio, 'Upload Song Audio', style: "font-size: 18px; color: white; margin-left: 5%;" %>
-        <%= form.file_field :song_audio, style: "color: white;  margin-left: 5%;" %>
+        <%= form.file_field :song_audio, style: "color: white;  margin-left: 5%;", :required => 'required'  %>
         <br>
         <%= form.submit "Update", class: "btn"%><button class="btn" id="hide_sheet_music_form">Cancel</button>
       <% end %>

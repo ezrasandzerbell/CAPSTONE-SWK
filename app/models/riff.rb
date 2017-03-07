@@ -5,6 +5,7 @@ class Riff < ActiveRecord::Base
   validates :title, :song_id, :presence => true
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/normal/Aleph.jpg"
+  validates_attachment_presence :avatar
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   has_attached_file :song_audio
