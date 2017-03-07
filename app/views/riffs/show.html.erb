@@ -86,29 +86,10 @@
 
   <% if @riff.sheet_music %>
       <div class="centerIcons">
-        <%= image_tag(@riff.sheet_music, style: "width: 700px;") %>
+        <a href="http://www.noteflight.com"><%= image_tag(@riff.sheet_music, style: "width: 700px;") %></a> 
       </div>
       <br>
       <br>
   <% end %>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <!-- This area is for API calls (WORDS API) -->
-
-  <!-- <% if @riff.cryptogram.definition && @riff.cryptogram.synonyms != [] %>
-    <h1>Definition</h1>
-    <% @riff.cryptogram.definition.each do |definition| %>
-    <p><%= definition %></p>
-    <br>
-
-    <% end %>
-  <% end %>
-  <% if @riff.cryptogram.synonyms && @riff.cryptogram.synonyms != [] %>
-    <h1>Synonyms</h1>
-    <p><% @riff.cryptogram.synonyms.each do |syn| %>
-        <%= syn %>
-        <br>
-      <% end %>
-    </p>
-  <% end %> -->
-  <br>
 </div>

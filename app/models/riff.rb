@@ -11,7 +11,7 @@ class Riff < ActiveRecord::Base
   has_attached_file :song_audio
   validates_attachment_content_type :song_audio, :content_type => [ 'application/mp3', 'application/x-mp3', 'audio/mpeg', 'audio/mp3', 'audio/x-m4a' ]
 
-  has_attached_file :sheet_music
+  has_attached_file :sheet_music, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "trebleclef.jpg"
   validates_attachment_content_type :sheet_music, content_type: /\Aimage\/.*\z/
 
 
