@@ -35,7 +35,7 @@
               <a href="/"><%= image_tag("home_icon.png") %></a>
             <% if current_user %>
               <%= link_to image_tag("log_out_icon.png"), destroy_user_session_path, method: "delete" %>
-              <%= link_to image_tag("song_bank_footer_icon.png"), songs_path, :class => 'main-links' %>
+              <%= link_to image_tag("song_bank_footer_icon.png"), riffs_path, :class => 'main-links' %>
               <%= link_to image_tag("keyboard_icon.png"), keyboard_path %>
               <%= link_to "https://www.noteflight.com/login", target: :_blank do  %>
               <%= image_tag("sheet_music_icon.png")%><% end %>

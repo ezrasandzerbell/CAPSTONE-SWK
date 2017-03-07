@@ -1,6 +1,6 @@
 class Cryptogram < ActiveRecord::Base
-  validates :song_id, :word, :presence => true
-  belongs_to :song
+  validates :riff_id, :word, :presence => true
+  belongs_to :riff
 
 
   def musicEncryption
@@ -44,42 +44,4 @@ class Cryptogram < ActiveRecord::Base
       end
       return outputArray
     end
-
-
-    def get_definition
-      definitionArray = []
-      response = HTTParty.get("https://wordsapiv1.p.mashape.com/words/" + self.word,
-        headers:{
-          "X-Mashape-Key" => ENV["API_KEY"],
-          "Accept" => "application/json"
-        })
-        if response.parsed_response["results"].kind_of?(Array)
-          response.parsed_response["results"].each do |result|
-            if result["definition"]
-            definitionArray.push(result["definition"])
-            end
-          end
-        end
-      return definitionArray
-    end
-
-    def get_synonym
-      synonymArray = []
-      response = HTTParty.get("https://wordsapiv1.p.mashape.com/words/" + self.word,
-        headers:{
-          "X-Mashape-Key" => ENV["API_KEY"],
-          "Accept" => "application/json"
-        })
-      if response.parsed_response["results"].kind_of?(Array)
-        response.parsed_response["results"].each do |result|
-          if result["synonyms"]
-            result["synonyms"].each do |syn|
-              synonymArray.push(syn)
-            end
-          end
-        end
-      end
-      return synonymArray
-    end
-
 end

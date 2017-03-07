@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170305210705) do
+ActiveRecord::Schema.define(version: 20170307173233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "albums", force: :cascade do |t|
+    t.string  "title"
+    t.string  "details"
+    t.integer "user_id"
+  end
 
   create_table "cryptograms", force: :cascade do |t|
     t.string  "word"
@@ -23,15 +29,15 @@ ActiveRecord::Schema.define(version: 20170305210705) do
     t.string  "note_array",   array: true
     t.string  "card_array",   array: true
     t.string  "chord_array",  array: true
-    t.integer "song_id"
+    t.integer "riff_id"
     t.string  "synonyms",     array: true
     t.string  "definition",   array: true
   end
 
-  create_table "songs", force: :cascade do |t|
+  create_table "riffs", force: :cascade do |t|
     t.string   "title"
     t.string   "lyrics"
-    t.string   "user_id"
+    t.string   "song_id"
     t.string   "thoughts"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
@@ -45,6 +51,12 @@ ActiveRecord::Schema.define(version: 20170305210705) do
     t.string   "song_audio_content_type"
     t.integer  "song_audio_file_size"
     t.datetime "song_audio_updated_at"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string  "title"
+    t.string  "details"
+    t.integer "album_id"
   end
 
   create_table "users", force: :cascade do |t|

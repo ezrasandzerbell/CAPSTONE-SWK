@@ -1,20 +1,24 @@
 <% if @user %>
-
-  <br>
-  <% if @user.songs %>
-    <h1 style="text-align: center; margin-bottom: 25px;">Song List</h1>
-    <div class="row">
-      <div class="col-md-3 home_song_tile" style="background-size: 30vh 20vw;">
-          <h4><%= link_to image_tag('new-song.png', :style => "padding-left: 50%; padding-top: 50%; transform: translate(-25%, -25%);"), new_user_song_path(@user) %></h4>
-      </div>
-      <% @user.songs.each do |song| %>
-        <div class="col-md-3 home_song_tile" style="background-image: url('<%= song.avatar %>');">
-          <div class="home_song_text" style="text-align: center; font-size: 1.5em;">
-            <%= link_to song.title, user_song_path(@user, song)%>
-          </div>
+  <% if @album %>
+    <% if @album.songs %>
+      <h1 style="text-align: center; margin-bottom: 25px;">Song List</h1>
+      <div class="row">
+        <div class="col-md-3 home_riff_tile" style="background-size: 30vh 20vw;">
+            <h4><%= link_to image_tag('new-song.png', :style => "padding-left: 50%; padding-top: 50%; transform: translate(-25%, -25%);"), new_album_song_path(@album) %></h4>
         </div>
-      <% end %>
-    </div>
+        <% @album.songs.each do |song| %>
+          <div class="col-md-3 home_riff_tile" style="background-color: blue; color: white;">
+            <div class="home_riff_text" style="text-align: center; font-size: 1.5em;">
+              <%= link_to song.title, album_song_path(@album, song)%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+    <%= link_to "Create new song", new_album_song_path(@album) %>
+    <% end %>
+  <% else %>
+  <%= link_to "Create new album", new_user_album_path(@user) %>
   <% end %>
 <% else %>
   <h2><%= link_to "Log-in", new_user_session_path %> | <%= link_to "Signup", new_user_registration_path %></h2>

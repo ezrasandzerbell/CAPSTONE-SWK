@@ -1,0 +1,21 @@
+<% if @user %>
+
+  <br>
+  <% if @user.riffs %>
+    <h1 style="text-align: center; margin-bottom: 25px;">Riff List</h1>
+    <div class="row">
+      <div class="col-md-3 home_riff_tile" style="background-size: 30vh 20vw;">
+          <h4><%= link_to image_tag('new-riff.png', :style => "padding-left: 50%; padding-top: 50%; transform: translate(-25%, -25%);"), new_user_riff_path(@user) %></h4>
+      </div>
+      <% @user.riffs.each do |riff| %>
+        <div class="col-md-3 home_riff_tile" style="background-image: url('<%= riff.avatar %>');">
+          <div class="home_riff_text" style="text-align: center; font-size: 1.5em;">
+            <%= link_to riff.title, user_riff_path(@user, riff)%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <h2><%= link_to "Log-in", new_user_session_path %> | <%= link_to "Signup", new_user_registration_path %></h2>
+<% end %>

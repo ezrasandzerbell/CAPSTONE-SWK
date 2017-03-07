@@ -1,22 +1,18 @@
 <% if @user %>
   <% if @album %>
-    <% if @song %>
-      <h1 style="text-align: center; margin-bottom: 25px;">Riff List</h1>
+      <h1 style="text-align: center; margin-bottom: 25px;">Song List</h1>
       <div class="row">
         <div class="col-md-3 home_riff_tile" style="background-size: 30vh 20vw;">
-            <h4><%= link_to image_tag('new-song.png', :style => "padding-left: 50%; padding-top: 50%; transform: translate(-25%, -25%);"), new_song_riff_path(@song) %></h4>
+            <h4><%= link_to image_tag('new-song.png', :style => "padding-left: 50%; padding-top: 50%; transform: translate(-25%, -25%);"), new_album_song_path(@album) %></h4>
         </div>
-        <% @song.riffs.each do |riff| %>
+        <% @album.songs.each do |song| %>
           <div class="col-mda-3 home_riff_tile" style="background-color: blue; color: white;">
             <div class="home_riff_text" style="text-align: center; font-size: 1.5em;">
-              <%= link_to riff.title, song_riff_path(@song, riff)%>
+              <%= link_to song.title, album_song_path(@album, song)%>
             </div>
           </div>
         <% end %>
       </div>
-    <% else %>
-    <%= link_to "Create new song", new_album_song_path(@album) %>
-    <% end %>
   <% else %>
   <%= link_to "Create new album", new_user_album_path(@user) %>
   <% end %>
