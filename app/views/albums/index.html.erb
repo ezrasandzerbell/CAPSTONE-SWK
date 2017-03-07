@@ -5,7 +5,7 @@
     <h1 style="text-align: center; margin-bottom: 25px;">Album List</h1>
     <div class="row">
       <div class="col-md-3 home_riff_tile" style="background-size: 30vh 20vw;">
-          <h4><%= link_to image_tag('new-riff.png', :style => "padding-left: 50%; padding-top: 50%; transform: translate(-25%, -25%);"), new_user_album_path(@user) %></h4>
+          <h4><%= link_to image_tag('new-song.png', :style => "padding-left: 50%; padding-top: 50%; transform: translate(-25%, -25%);"), new_user_album_path(@user) %></h4>
       </div>
       <% @user.albums.each do |album| %>
         <div class="col-md-3 home_riff_tile" style="background-color: blue; color: white;">

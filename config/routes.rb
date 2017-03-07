@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   end
 
   get '/keyboard', to: 'cryptokeyboard#index', as: 'keyboard'
+  get '/faq', to: 'faq#index', as: 'faq'
 end

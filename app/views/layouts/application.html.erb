@@ -15,7 +15,24 @@
     <!-- PageHeader / Site Logo -->
 
     <div class="page-header">
-      <a href="/"><%= image_tag "swklogo.jpg"%></a>
+      <span class="col-md-3 dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= image_tag("menuicon.jpg") %><span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <% if current_user %>
+            <li><span class="dropdowntext"><%= link_to image_tag("home_icon.png", style: "height: 30px;"), root_path %> &nbsp &nbsp <%= link_to "Home", root_path %> </a></span></li>
+            <li><span class="dropdowntext"><%= link_to image_tag("song_bank_footer_icon.png", style: "height: 30px;"), riffs_path, :class => 'main-links'%> &nbsp &nbsp <%= link_to "Albums", albums_path, :class => 'main-links' %> </span> </li>
+            <li><span class="dropdowntext"><%= link_to image_tag("keyboard_icon.png", style: "height: 30px;"), keyboard_path%> &nbsp &nbsp <%= link_to "Musical Typing", keyboard_path %></span></li>
+            <li><span class="dropdowntext"><%= link_to image_tag("sheet_music_icon.png", style: "height: 30px;"), 'https://www.noteflight.com/login', target: :_blank %>
+            &nbsp &nbsp <%= link_to "Sheet Music", 'https://www.noteflight.com/login' %> </span></li>
+            <li><span class="dropdowntext"><%= link_to image_tag("faq_icon.png", style: "height: 30px;"), faq_path%> &nbsp &nbsp <%= link_to "FAQ", faq_path%></span></li>
+            <li><span class="dropdowntext"><%= link_to image_tag("log_out_icon.png", style: "height: 30px;"), destroy_user_session_path, method: "delete"%> &nbsp &nbsp <%= link_to "log out", destroy_user_session_path, method: "delete" %> </span></li>
+          <% else %>
+            <li><span class="dropdowntext"><%= link_to image_tag("log_in_icon.png", style: "height: 30px;"), new_user_session_path%> &nbsp &nbsp <%= link_to "Log In", new_user_session_path %></span></li>
+            <li><span class="dropdowntext"><%= link_to image_tag("new_user_icon.png", style: "height: 30px;"), new_user_registration_path%> &nbsp &nbsp <%= link_to "New User", new_user_registration_path %></span></li>
+          <% end %>
+        </ul>
+      </span>
+      <span class="col-md-9"><a href="/"><%= image_tag "swklogo.jpg"%></a></span>
     </div>
 
     <!-- End of PageHeader / Site Logo -->
@@ -27,28 +44,6 @@
 
 
     <!-- End of MAIN BODY - YIELD -->
-
-    <!-- Footer / Navigation Conditions -->
-
-    <div class="page-footer">
-      <div class="row">
-              <a href="/"><%= image_tag("home_icon.png") %></a>
-            <% if current_user %>
-              <%= link_to image_tag("log_out_icon.png"), destroy_user_session_path, method: "delete" %>
-              <%= link_to image_tag("song_bank_footer_icon.png"), riffs_path, :class => 'main-links' %>
-              <%= link_to image_tag("keyboard_icon.png"), keyboard_path %>
-              <%= link_to "https://www.noteflight.com/login", target: :_blank do  %>
-              <%= image_tag("sheet_music_icon.png")%><% end %>
-              <%= image_tag("faq_icon.png") %>
-            <% else %>
-                <%= link_to image_tag("log_in_icon.png"), new_user_session_path %>
-                <%= link_to image_tag("new_user_icon.png"), new_user_registration_path %>
-
-            <% end %>
-      </div>
-    </div>
-
-    <!-- End of Footer / Navigation Conditions -->
 
   </body>
 </html>
