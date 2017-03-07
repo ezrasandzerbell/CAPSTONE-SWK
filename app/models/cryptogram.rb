@@ -1,5 +1,7 @@
 class Cryptogram < ActiveRecord::Base
+
   validates :riff_id, :word, :presence => true
+
   belongs_to :riff
 
 

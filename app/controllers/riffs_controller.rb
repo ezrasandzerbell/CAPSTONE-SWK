@@ -49,21 +49,19 @@ class RiffsController < ApplicationController
     @song = Song.find(params[:song_id])
     @album = Album.find(@song.album_id)
     @riff = Riff.find(params[:id])
-    if riff_params[:avatar] != ""
-      if @riff.update(riff_params)
-        respond_to do |format|
-          format.html { redirect_to song_riff_path(@song, @riff) }
-          format.js
-        end
-      else
-        flash[:notice] = 'nope'
-        redirect_to :edit
+    if @riff.update(riff_params)
+      respond_to do |format|
+        format.html { redirect_to song_riff_path(@song, @riff) }
+        format.js
       end
+    else
+      flash[:notice] = 'nope'
+      redirect_to :edit
     end
   end
 
 private
   def riff_params
-    params.require(:riff).permit(:song_id, :title, :thoughts, :avatar, :sheet_music, :song_audio)
+    params.require(:riff).permit(:title, :song_id, :thoughts, :avatar, :sheet_music, :song_audio)
   end
 end
