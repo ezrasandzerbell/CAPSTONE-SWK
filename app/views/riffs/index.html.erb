@@ -1,19 +1,16 @@
 <% if @user %>
 
   <br>
-  <% if @user.riffs %>
-    <h1 style="text-align: center; margin-bottom: 25px;">Riff List</h1>
     <div class="row">
-      <div class="col-md-3 home_riff_tile" style="background-size: 30vh 20vw;">
-          <h4><%= link_to image_tag('new-riff.png', :style => "padding-left: 50%; padding-top: 50%; transform: translate(-25%, -25%);"), new_user_riff_path(@user) %></h4>
-      </div>
-      <% @user.riffs.each do |riff| %>
-        <div class="col-md-3 home_riff_tile" style="background-image: url('<%= riff.avatar %>');">
-          <div class="home_riff_text" style="text-align: center; font-size: 1.5em;">
-            <%= link_to riff.title, user_riff_path(@user, riff)%>
-          </div>
-        </div>
+      <h1 style="text-align: center; margin-bottom: 25px;">Riffs for <%= @song.title %></h1>
+      <ul>
+        <li> <%= link_to(new_song_riff_path(@song)) do %> <%= image_tag("song_icon.png") %> <h3>Create New Riff</h3> <% end %></li>
+      <% if @song.riffs %>
+        <% @song.riffs.each do |riff| %>
+          <li> <%= link_to(song_riff_path(@song, riff)) do %> <%= image_tag(riff.avatar) %> <h3> <%= riff.title %></h3> <% end %></li>
+        <% end %>
       <% end %>
+    </ul>
     </div>
   <% end %>
 <% else %>

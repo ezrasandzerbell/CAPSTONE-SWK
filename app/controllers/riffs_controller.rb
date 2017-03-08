@@ -1,5 +1,11 @@
 class RiffsController < ApplicationController
 
+  def index
+    @user = current_user
+    @song = Song.find(params[:song_id])
+    @album = Album.find(@song.album_id)
+  end
+
   def new
     @user = current_user
     @song = Song.find(params[:song_id])

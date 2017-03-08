@@ -1,0 +1,14 @@
+<h1 style="text-align: center; margin-bottom: 25px;">Riff List</h1>
+
+<ul>
+  <li> <%= link_to(new_song_riff_path(@song)) do %> <%= image_tag("song_icon.png", style: "height: 50px;") %> <h3>Create New Riff </h3><% end %></li>
+  <br>
+  <div  id="riff_list">
+    <% if @song.riffs %>
+      <% @song.riffs.each do |riff| %>
+        <li> <%= link_to(song_riff_path(@song, riff)) do %> <%= image_tag(riff.avatar, style: "height: 50px;") %> <h3> <%= riff.title %> </h3> <% end %></li>
+        <br>
+      <% end %>
+    <% end %>
+  </div>
+</ul>

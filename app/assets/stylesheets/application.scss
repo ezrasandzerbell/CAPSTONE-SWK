@@ -133,8 +133,78 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
+.song_list {
+  margin-top: 30px;
 
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 
+  li {
+    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+    border-bottom: 1px solid #ccc;
+  }
+
+  li:last-child {
+    border: none;
+  }
+
+  li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+  }
+
+  li a:hover {
+    font-size: 30px;
+    background: black;
+  }
+}
+
+#riff_list {
+  ul {
+  list-style-type: none;
+}
+
+h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+li {
+  padding: 10px;
+  overflow: auto;
+}
+
+li:hover {
+  background: rgba(255,255,255, 0.2);
+  cursor: pointer;
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  a {
+    text-decoration: none;
+  }
+  }
+}
 
 #riff_image_form {
   display: none;

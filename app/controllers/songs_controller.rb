@@ -27,6 +27,10 @@ class SongsController < ApplicationController
     @user = current_user
     @album = Album.find(params[:album_id])
     @song = Song.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to song_riff_path(@song, @riff) }
+      format.js
+    end
   end
 
   def update
