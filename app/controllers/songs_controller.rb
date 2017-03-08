@@ -28,7 +28,7 @@ class SongsController < ApplicationController
     @album = Album.find(params[:album_id])
     @song = Song.find(params[:id])
     respond_to do |format|
-      format.html { redirect_to song_riff_path(@song, @riff) }
+      format.html { }
       format.js
     end
   end
@@ -39,7 +39,7 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
     if @song.update(song_params)
       respond_to do |format|
-        format.html { redirect_to album_song_path(@album, @song) }
+        format.html { redirect_to album_songs_path(@album) }
         format.js
       end
     else

@@ -21,9 +21,12 @@
           <% if current_user %>
             <li><span class="dropdowntext"><%= link_to image_tag("home_icon.png", style: "height: 30px;"), root_path %> &nbsp &nbsp <%= link_to "Home", root_path %> </a></span></li>
             <li><span class="dropdowntext"><%= link_to image_tag("song_bank_footer_icon.png", style: "height: 30px;"), riffs_path, :class => 'main-links'%> &nbsp &nbsp <%= link_to "Albums", albums_path, :class => 'main-links' %> </span> </li>
+            <% if @song %>
+              <li><span class="dropdowntext"><%= link_to image_tag("vinyl_icon.jpg", style: "height: 30px;"), album_songs_path(@album), :class => 'main-links', style: 'margin-left: -5px;'%> &nbsp &nbsp <%= link_to @song.title, album_songs_path(@album), :class => 'main-links', style: 'margin-left: -5px;' %></span> </li>
+            <% end %>
             <li><span class="dropdowntext"><%= link_to image_tag("keyboard_icon.png", style: "height: 30px;"), keyboard_path%> &nbsp &nbsp <%= link_to "Musical Typing", keyboard_path %></span></li>
             <li><span class="dropdowntext"><%= link_to image_tag("sheet_music_icon.png", style: "height: 30px;"), 'https://www.noteflight.com/login', target: :_blank %>
-            &nbsp &nbsp <%= link_to "Sheet Music", 'https://www.noteflight.com/login' %> </span></li>
+            &nbsp &nbsp <%= link_to "Sheet Music", 'https://www.noteflight.com/login', target: :_blank %> </span></li>
             <li><span class="dropdowntext"><%= link_to image_tag("faq_icon.png", style: "height: 30px;"), faq_path%> &nbsp &nbsp <%= link_to "FAQ", faq_path%></span></li>
             <li><span class="dropdowntext"><%= link_to image_tag("log_out_icon.png", style: "height: 30px;"), destroy_user_session_path, method: "delete"%> &nbsp &nbsp <%= link_to "log out", destroy_user_session_path, method: "delete" %> </span></li>
           <% else %>

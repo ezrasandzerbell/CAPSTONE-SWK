@@ -1,5 +1,12 @@
 <% if @user %>
   <% if @album %>
+
+  <div id="song_show_header">
+    <h1><span data-shadow-text="Text-Shadow"><%= @album.title %></span>
+    </h1>
+  </div>
+
+
   <div class="row">
     <div class="col-md-6 song_list">
       <% if @album.songs %>
