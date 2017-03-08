@@ -13,7 +13,7 @@ class AlbumsController < ApplicationController
     @user = current_user
     @album = Album.new(:title => album_params[:title], :user_id => @user.id)
     if @album.save
-      redirect_to user_albums_path(@user)
+      redirect_to album_songs_path(@album)
     else
       flash[:notice] = "Album not added!"
       render :new
