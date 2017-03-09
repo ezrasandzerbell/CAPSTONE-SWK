@@ -7,6 +7,10 @@ class AlbumsController < ApplicationController
   def new
     @user = current_user
     @album = Album.new
+    respond_to do |format|
+      format.html { redirect_to user_albums_path(@user) }
+      format.js
+    end
   end
 
   def create

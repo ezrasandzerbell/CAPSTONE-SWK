@@ -1,10 +1,16 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+
 <% if @user %>
 
   <br>
   <% if @user.albums %>
     <h1 style="text-align: center; margin-bottom: 25px;">Album List</h1>
+    <br><br>
+    <div id="album_name_form"></div>
     <div class="row">
-      <%= link_to(new_user_album_path(@user)) do %>
+      <%= link_to(new_user_album_path(@user), remote:true) do %>
         <div class="col-md-5 album-styling" style="background-image: url('assets/newrecord.jpg');">
           <div class="album_text">
             <h2>New Record</h2>
