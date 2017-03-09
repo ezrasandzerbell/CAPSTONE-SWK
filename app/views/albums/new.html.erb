@@ -1,4 +1,5 @@
-<%= form_for [@user, @album] do |f| %>
+<%= form_for [@user, @album], url: albums_path, html: { multipart: true }  do |f| %>
   <%= f.text_field :title, placeholder: "Enter Your Album Title" %>
+  <%= f.file_field :avatar %>
   <%= f.submit %>
 <% end %>

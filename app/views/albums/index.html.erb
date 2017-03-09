@@ -13,7 +13,7 @@
       <% end %>
       <% @user.albums.each do |album| %>
         <%= link_to(album_songs_path(album)) do %>
-        <div class="col-md-5 album-styling" style="background-image: url('assets/newrecord.jpg');">
+        <div class="col-md-5 album-styling" style="background-image: url('<%= album.avatar %>');">
           <div class="album_text">
             <h2> <%= album.title %></h2>
           </div>
