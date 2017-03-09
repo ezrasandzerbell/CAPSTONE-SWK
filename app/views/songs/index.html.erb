@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
 <% if @user %>
   <% if @album %>
 
@@ -6,13 +9,16 @@
     </h1>
   </div>
 
+  <div id="song_name_form">
+
+  </div>
 
   <div class="row">
     <div class="col-md-6 song_list">
       <% if @album.songs %>
         <h1 style="text-align: center; margin-bottom: 25px;">Song List</h1>
         <ul>
-          <li><%= link_to "Create New Song", new_album_song_path(@album) %></li>
+          <li><%= link_to "Create New Song", new_album_song_path(@album), remote:true %></li>
           <br>
           <% @album.songs.each do |song| %>
             <li><%= link_to song.title, album_song_path(@album, song), remote:true %></li>

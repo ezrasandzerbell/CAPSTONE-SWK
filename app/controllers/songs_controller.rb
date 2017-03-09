@@ -9,6 +9,10 @@ class SongsController < ApplicationController
     @user = current_user
     @album = Album.find(params[:album_id])
     @song = Song.new
+    respond_to do |format|
+      format.html { redirect_to album_songs_path(@album) }
+      format.js
+    end
   end
 
   def create
