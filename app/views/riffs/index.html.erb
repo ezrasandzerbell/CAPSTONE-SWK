@@ -1,18 +1,17 @@
+<!--
+
 <% if @user %>
 
-  <br>
-    <div class="row">
       <h1 style="text-align: center; margin-bottom: 25px;">Riffs for <%= @song.title %></h1>
-      <ul>
-        <li> <%= link_to(new_song_riff_path(@song)) do %> <%= image_tag("song_icon.png") %> <h3>Create New Riff</h3> <% end %></li>
+          <%= link_to(new_song_riff_path(@song)) do %>
+            <%= image_tag("song_icon.png") %> <h3>Create New Riff</h3>
+          <% end %>
       <% if @song.riffs %>
         <% @song.riffs.each do |riff| %>
-          <li> <%= link_to(song_riff_path(@song, riff)) do %> <%= image_tag(riff.avatar) %> <h3> <%= riff.title %></h3> <% end %></li>
+          <%= link_to(song_riff_path(@song, riff)) do %> <%= image_tag(riff.avatar) %> <h3> <%= riff.title %></h3> <% end %>
         <% end %>
       <% end %>
-    </ul>
-    </div>
   <% end %>
 <% else %>
   <h2><%= link_to "Log-in", new_user_session_path %> | <%= link_to "Signup", new_user_registration_path %></h2>
-<% end %>
+<% end %> -->

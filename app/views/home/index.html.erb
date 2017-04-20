@@ -1,11 +1,1 @@
-<% if @user %>
-
-  <div class="row" style="margin-top: 15%;">
-    <div class="col-md-4 centerIcons"><%= link_to image_tag("crypto_keyboard.jpg"), keyboard_path %></div>
-    <div class="col-md-4 centerIcons"><%= link_to image_tag("mandala_frontpage.jpg"), albums_path %></div>
-    <div class="col-md-4 centerIcons"><%= image_tag("data_analytics") %></div>
-  </div>
-
-<% else %>
-  <h2><%= link_to "Log-in", new_user_session_path %> | <%= link_to "Signup", new_user_registration_path %></h2>
-<% end %>
+<%= video_tag "jupiter_bkgd.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video", id: "bgvid" %>

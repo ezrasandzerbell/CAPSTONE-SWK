@@ -1,10 +1,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
-  <div class="cryptoWrapper">
 
     <!-- Title and Image -->
-    <div style="text-align: center; font-size: 80px; color: white;"><%= @riff.title%></div>
+    <br><br>
+    <div style="text-align: center; font-size: 80px; color: white;"><%= @riff.title %></div>
     <% if @riff.avatar  %>
       <div class="centerIcons">
         <%= image_tag(@riff.avatar, style: "height: 300px") %>
@@ -37,7 +37,7 @@
 
     </div>
 
-    <div id="riff_image_form" style="margin-left: 36%;">
+    <div id="riff_image_form" style="margin-left: 40%;">
       <%= form_for [@song, @riff], url: song_riff_path(@song, @riff), html: { method: :put } do |form| %>
         <%= form.label :avatar, 'Upload Song Image', style: "font-size: 18px; color: white; margin-left: 5%;" %>
         <%= form.file_field :avatar, style: "color: white;  margin-left: 5%;", :required => 'required'  %>
@@ -47,7 +47,7 @@
 
     </div>
 
-    <div id="sheet_music_form" style="margin-left: 36%;">
+    <div id="sheet_music_form" style="margin-left: 40%;">
       <%= form_for [@song, @riff], url: song_riff_path(@song, @riff), html: { method: :put } do |form| %>
         <%= form.label :sheet_music, 'Upload Sheet Music Image', style: "font-size: 18px; color: white; margin-left: 5%;" %>
         <%= form.file_field :sheet_music, style: "color: white;  margin-left: 5%;", :required => 'required'  %>
@@ -56,7 +56,7 @@
       <% end %>
     </div>
 
-    <div id="song_audio_form" style="margin-left: 36%;">
+    <div id="song_audio_form" style="margin-left: 40%;">
       <%= form_for [@song, @riff], url: song_riff_path(@song, @riff), html: { method: :put } do |form| %>
         <%= form.label :song_audio, 'Upload Song Audio', style: "font-size: 18px; color: white; margin-left: 5%;" %>
         <%= form.file_field :song_audio, style: "color: white;  margin-left: 5%;", :required => 'required'  %>
@@ -86,10 +86,9 @@
 
   <% if @riff.sheet_music %>
       <div class="centerIcons">
-        <a href="http://www.noteflight.com"><%= image_tag(@riff.sheet_music, style: "width: 700px;") %></a> 
+        <a href="http://www.noteflight.com"><%= image_tag(@riff.sheet_music, style: "width: 700px;") %></a>
       </div>
       <br>
       <br>
   <% end %>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>

@@ -18,7 +18,6 @@ gem 'httparty'
 gem 'dotenv-rails'
 gem "paperclip", "~> 5.0.0"
 
-
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'

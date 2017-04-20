@@ -1,29 +1,20 @@
 <%= form_for [@user, @album], url: albums_path, html: { multipart: true }  do |f| %>
-  <div class="row">
-    <div class="col-md-3">
-
-    </div>
-    <div class="col-md-6"><%= f.text_field :title, placeholder: "Enter Your Album Title", style: "color: white;" %>
-      <br>
-      <div class="row">
-        <div class="col-md-8">
-          <h4>Upload Album Cover:</h4>
-        </div>
-        <div class="col-md-4" style="padding-top: 30px;">
-          <%= f.file_field :avatar, style: "color: white;", :required => 'required' %>
-        </div>
-       </div>
-       <br>
-       <div class="row">
-         <div class="col-md-4">
-
-         </div>
-         <div class="col-md-3">
-                  <%= f.submit style: "font-size: 20px;" %>
-         </div>
-
+<div class="row-centered well" style="margin-left: 30%; margin-right: 30%;">
+  <div class="col-centered">
+    <h4 style="text-align: center;">Upload Album Cover:</h4>
+    <div class="row">
+      <div class="col-md-offset-3">
+        <%= f.file_field :avatar, style: "color: white;", :required => 'required' %>
       </div>
     </div>
+    <br><br>
+    <%= f.text_field :title, placeholder: "Enter Your Album Title", style: "width: 250px;"%>
+    <br><br>
+    <div class="col-md-offset-3">
+      <%= f.submit style: "font-size: 15px;" %>
+    </div>
+   </div>
+</div>
 
 
 <% end %>

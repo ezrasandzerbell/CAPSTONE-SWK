@@ -16,6 +16,34 @@ body {
   }
 }
 
+.footer {
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba(0,0,0,0.8);
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  padding: 7px;
+}
+
+.header {
+  width: 100%;
+  top: 0;
+  position: fixed;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
 p, h1, h2, h3, h4, h5, h6 {
   color: white;
 }
@@ -79,6 +107,49 @@ p, h1, h2, h3, h4, h5, h6 {
   padding-top: 4%;
 }
 
+ul {
+  list-style: none;
+}
+
+li {
+  float: left;
+  padding-left: 15px;
+  font-size: 1.5em;
+}
+
+.deviseWell {
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+.signupWell {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+input {
+  max-width: 100%;
+}
+
+#bgvid {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   min-width: 100%;
+   min-height: 100%;
+   width: auto;
+   height: auto;
+   z-index: -100;
+   -ms-transform: translateX(-50%) translateY(-50%);
+   -moz-transform: translateX(-50%) translateY(-50%);
+   -webkit-transform: translateX(-50%) translateY(-50%);
+   transform: translateX(-50%) translateY(-50%);
+   background-size: cover;
+   opacity: 0.6;
+}
+
 .homeStyle {
   margin-left: -10%;
   margin-right: -10%;
@@ -133,6 +204,9 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+a:hover {
+  text-decoration: none;
+}
 
 .song_list {
   margin-top: 30px;
@@ -170,8 +244,30 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.panel-heading {
+
+  h1 {
+    color: black;
+  }
+}
+
+.newRiff {
+  max-width: 50%;
+  border-width: medium;
+  border-style: ridge;
+}
+
+.melodyListItem {
+  max-width: 100%;
+  border-width: thin;
+  border-style: ridge;
+}
+
+.panel-body a {
+  color: black;
+}
+
 #riff_list {
-    margin-top: 30px;
   ul {
   list-style-type: none;
   }
@@ -181,8 +277,7 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 
   li img {
-    float: left;
-    margin: 0 15px 0 0;
+    margin: 0 3px 0 0;
   }
 
   li p {
@@ -211,7 +306,7 @@ p, h1, h2, h3, h4, h5, h6 {
 #song_show_header {
 
   h1 {
-      font: 600 1.5em/1 'Raleway', sans-serif;
+      font: 600 1em/1 'Raleway', sans-serif;
       color: rgba(0,0,0,.5);
       text-align: center;
       text-transform: uppercase;
@@ -381,6 +476,7 @@ p, h1, h2, h3, h4, h5, h6 {
   color: white;
   border-style: dotted;
   border-width: thin;
+  cursor: pointer;
   }
 
 .c:hover, .cSharp:hover, .d:hover, .dSharp:hover, .e:hover, .f:hover, .fSharp:hover, .g:hover, .gSharp:hover, .a:hover, .aSharp:hover, .b:hover, .c1:hover, .c1Sharp:hover, .d1:hover, .d1Sharp:hover, .e1:hover, .f1:hover, .f1Sharp:hover, .g1:hover, .g1Sharp:hover, .a1:hover, .a1Sharp:hover, .b1:hover, .c2:hover, .c2Sharp:hover, .d2:hover, .d2Sharp:hover, .e2:hover, .f2:hover, .f2Sharp:hover, .g2:hover, .g2Sharp:hover, .a2:hover, .a2Sharp:hover, .b2:hover, .c3:hover, .c3Sharp:hover, .d3:hover, .d3Sharp:hover, .e3:hover, .f3:hover, .f3Sharp:hover, .g3:hover, .g3Sharp:hover, .a3:hover, .a3Sharp:hover, .b3:hover, .c4:hover, .c4Sharp:hover, .d4:hover, .d4Sharp:hover, .e4:hover, .f4:hover, .f4Sharp:hover, .g4:hover, .g4Sharp:hover, .a4:hover, .a4Sharp:hover, .b4:hover  {

@@ -1,35 +1,54 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-
-
+<%= video_tag "jupiter_bkgd.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video", id: "bgvid" %>
+<br>
 <% if @user %>
-
   <br>
-  <% if @user.albums %>
     <h1 style="text-align: center; margin-bottom: 25px;">Album List</h1>
-    <br><br>
-    <div id="album_name_form"></div>
-    <div class="row">
-      <%= link_to(new_user_album_path(@user), remote:true) do %>
-        <div class="col-md-5 album-styling" style="background-image: url('assets/newrecord.jpg');">
-          <div class="album_text">
-            <h2>New Record</h2>
-          </div>
+
+    <div class="container">
+      <div id="album_name_form"></div>
+      <div class="row-centered">
+          <%= link_to(new_user_album_path(@user), remote:true) do %>
+            <div class="col-md-3 col-centered album-styling" style="background-image: url('assets/newrecord.jpg');">
+              <div class="album_text">
+                <h2>New Record</h2>
+              </div>
+            </div>
+          <% end %>
+      <% if @user.albums %>
+          <% @user.albums.each do |album| %>
+            <%= link_to(album_songs_path(album)) do %>
+            <div class="col-md-3 col-centered album-styling" style="background-image: url('<%= album.avatar %>');">
+              <div class="album_text">
+                <h2><%= album.title %></h2>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
         </div>
-      <% end %>
-      <% @user.albums.each do |album| %>
-        <%= link_to(album_songs_path(album)) do %>
-        <div class="col-md-5 album-styling" style="background-image: url('<%= album.avatar %>');">
-          <div class="album_text">
-            <h2> <%= album.title %></h2>
-          </div>
+      </div>
+
         </div>
-        <% end %>
-      <% end %>
-    </div>
+
   <% else %>
   <%= link_to "Create new album", new_user_album_path(@user) %>
   <% end %>
 <% else %>
-  <h2><%= link_to "Log-in", new_user_session_path %> | <%= link_to "Signup", new_user_registration_path %></h2>
+
+<div class="well deviseWell">
+      <%= form_for(:user, :url => session_path(:user)) do |f| %>
+      <%= f.text_field :email, :placeholder => "Email"%>
+      <br>
+      <%= f.password_field :password, :placeholder => "Password"%>
+      <br>
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me, :style => "color: white;" %>
+      <br>
+      <%= link_to "Forgot your password?", new_password_path(:user) %>
+      <br><br>
+      <div class="col-md-offset-4">
+        <%= f.submit 'Sign in' %>
+      </div>
+
+    <% end %>
+</div>
 <% end %>

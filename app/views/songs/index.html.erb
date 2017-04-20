@@ -1,48 +1,53 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+<%= video_tag "neptune_bkgd.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video", id: "bgvid" %>
 
-<% if @user %>
-  <% if @album %>
+<div style="margin-left: 5%; margin-right: 5%;">
+    <% if @user %>
+      <% if @album %>
+      <div id="song_show_header">
+        <h1><span><%= @album.title %></span>
+        </h1>
+      </div>
+  <div class="well" style="margin-top: -10px;">
+      <div id="song_name_form">
 
-  <div id="song_show_header">
-    <h1><span data-shadow-text="Text-Shadow"><%= @album.title %></span>
-    </h1>
-  </div>
-
-  <div id="song_name_form">
-
-  </div>
-
-  <div class="row">
-    <div class="col-md-6 song_list">
-      <% if @album.songs %>
-        <h1 style="text-align: center; margin-bottom: 25px;">Song List</h1>
-        <ul>
-          <li><%= link_to "Create New Song", new_album_song_path(@album), remote:true %></li>
-          <br>
-          <% @album.songs.each do |song| %>
-            <li><%= link_to song.title, album_song_path(@album, song), remote:true %></li>
-            <br>
-          <% end %>
-        </ul>
-
-      <% else %>
-      <%= link_to "Create new song", new_album_song_path(@album) %>
-      <% end %>
-    </div>
-    <div class="col-md-6" id="riff_list">
-      <h1 style="text-align: center; margin-bottom: 25px;">Riff List</h1>
-      <h3 style="text-align: center; margin-bottom: 25px;">Select a Song to Display your Riffs</h3>
-      <div class="centerIcons">
-        <%= image_tag("empty.png") %>
       </div>
 
-    </div>
+      <div class="row">
+
+        <div class="col-md-6" style="text-align: center;">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h1 style="text-align: center; margin-bottom: 25px;">Song List</h1>
+            </div>
+            <div class="panel-body">
+              <% if @album.songs %>
+
+                <%= link_to "Create New Song", new_album_song_path(@album), remote:true %>
+                  <br><br>
+                  <% @album.songs.each do |song| %>
+                    <%= link_to song.title, album_song_path(@album, song), remote:true %>
+                    <br><br>
+                  <% end %>
+
+              <% else %>
+              <%= link_to "Create new song", new_album_song_path(@album) %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" id="riff_list">
+          <h1 style="text-align: center; margin-bottom: 25px;">Riff List</h1>
+          <h3 style="text-align: center; margin-bottom: 25px;">Select a Song to Display your Riffs</h3>
+
+        </div>
+      </div>
+
+      <% else %>
+      <%= link_to "Create new album", new_user_album_path(@user) %>
+      <% end %>
+    <% else %>
+      <h2><%= link_to "Log-in", new_user_session_path %> | <%= link_to "Signup", new_user_registration_path %></h2>
+    <% end %>
   </div>
 
-  <% else %>
-  <%= link_to "Create new album", new_user_album_path(@user) %>
-  <% end %>
-<% else %>
-  <h2><%= link_to "Log-in", new_user_session_path %> | <%= link_to "Signup", new_user_registration_path %></h2>
-<% end %>
+</div>
