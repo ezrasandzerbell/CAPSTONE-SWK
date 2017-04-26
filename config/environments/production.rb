@@ -3,8 +3,6 @@ Rails.application.configure do
 
   config.public_file_server.enabled = true
   config.assets.compile = true
-  
-  RAILS_ENV=production rake assets:precompile
 
   config.paperclip_defaults = {
     storage: :s3,
