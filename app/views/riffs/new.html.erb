@@ -1,8 +1,10 @@
-<div class="create_crypto">
-  <div class="align_form">
-    <%= form_for [@song, @riff] do |f| %>
-      <%= f.text_field :title, placeholder: "Enter Your Riff Title", :style => "text-align: center; height: 40px; width: 160px;", maxlength: "12" %>
-      <br>
-    <% end %>
+<div class="margin-top-large">
+  <div class="create_crypto">
+    <div class="align_form">
+      <%= form_for [@song, @riff] do |f| %>
+        <%= f.text_field :title, placeholder: "Enter Your Riff Title", :style => "text-align: center; height: 40px; width: 160px;", maxlength: "12" %>
+        <br>
+      <% end %>
+    </div>
   </div>
 </div>

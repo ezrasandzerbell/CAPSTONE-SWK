@@ -18,6 +18,7 @@
     <div class="row centerIcons">
       <%= link_to image_tag('add_img.jpg'), song_riff_path(@song, @riff), id: "addImage", remote: true %>
       <%= link_to image_tag("sheet_music_icon.png"), song_riff_path(@song, @riff), id: "addSheetMusic", remote: true %>
+      <%= link_to "Sheet Music", 'https://www.noteflight.com/login', target: :_blank %>
       <%= link_to image_tag("song_audio_icon.png"), song_riff_path(@song, @riff), id: "addSongAudio", remote: true %>
       <%= link_to image_tag('take_note.jpg'), song_riff_path(@song, @riff), id: "addThoughts", remote: true %>
     </div>

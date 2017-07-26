@@ -7,45 +7,39 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Monoton" rel="stylesheet">
   </head>
 
   <body>
+    <div class="header">
+      <div class="row">
+        <div class="col-md-3">
+          <a href="/"><%= image_tag "swkeylogo.png", :class => 'logo'%></a>
+        </div>
+        <div class="col-md-7">
+          <ul>
+            <% if @song %>
+              <li><%= link_to @song.title, album_songs_path(@album), :class => 'main-links', style: 'margin-left: -5px;' %> </li>
+            <% end %>
+            <li><%= link_to "Musical Typing", keyboard_path %></li>
+            <li><%= link_to "Decryptor", faq_path%></li>
+            <li><%= link_to "FAQ", 'https://www.audiomancy.net', target: :_blank%></li>
+            <li><%= link_to "Github", 'https://www.github.com/ezrasandzerbell', target: :_blank%></li>
 
-    <!-- PageHeader / Site Logo -->
-      <br>
-      <span class="col-md-4 col-md-offset-4"><a href="/"><%= image_tag "swkeylogo.png"%></a></span>
-
-    <!-- End of PageHeader / Site Logo -->
-
-    <!-- MAIN BODY - YIELD -->
-
-      <%= yield %>
-
-
-    <!-- End of MAIN BODY - YIELD -->
-  <div class="footer">
-    <span class="col-md-8">
-      <ul>
-          <li><%= link_to image_tag("key.png"), albums_path, :class => 'main-links' %>  </li>
-          <li><%= link_to "Home", albums_path %></li>
-          <% if @song %>
-            <li><%= link_to @song.title, album_songs_path(@album), :class => 'main-links', style: 'margin-left: -5px;' %> </li>
+          <% if current_user %>
+            <li><%= link_to "log out", destroy_user_session_path, method: "delete" %> </li>
+          <% else %>
+            <li><%= link_to "New User", new_user_registration_path %></li>
           <% end %>
-          <li><%= link_to "Musical Typing", keyboard_path %></li>
-          <li><%= link_to "Sheet Music", 'https://www.noteflight.com/login', target: :_blank %> </li>
-          <li><%= link_to "FAQ", faq_path%></li>
+        </ul>
+      </div>
+      </div>
+    </div>
 
-        <% if current_user %>
-          <li><%= link_to "log out", destroy_user_session_path, method: "delete" %> </li>
-        <% else %>
-          <li><%= link_to "New User", new_user_registration_path %></li>
-        <% end %>
-      </ul>
-    </span>
-  </div>
-
-
-
+    <div class="row margin-top">
+      <div class="col-sm-12">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

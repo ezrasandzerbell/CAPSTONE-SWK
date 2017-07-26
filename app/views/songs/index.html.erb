@@ -1,53 +1,50 @@
-<%= video_tag "neptune_bkgd.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "video", id: "bgvid" %>
-<br><br>
-<div style="margin-left: 5%; margin-right: 5%;">
-    <% if @user %>
-      <% if @album %>
-      <div id="song_show_header">
-        <h1><span><%= @album.title %></span>
-        </h1>
-      </div>
-  <div class="well" style="margin-top: -10px;">
-      <div id="song_name_form">
-
+<div class="song-background-img">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <% if @user && @album %>
+      <div class="col-md-12 margin-bottom-xsmall">
+          <div id="song_show_header">
+            <h1><span><%= @album.title %></span></h1>
+          </div>
       </div>
 
-      <div class="row">
+      <div id="song_name_form" class="col-sm-12"></div>
 
-        <div class="col-md-6" style="text-align: center;">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h1 style="text-align: center; margin-bottom: 25px;">Song List</h1>
-            </div>
-            <div class="panel-body">
-              <% if @album.songs %>
-
-                <%= link_to "Create New Song", new_album_song_path(@album), remote:true %>
-                  <br><br>
-                  <% @album.songs.each do |song| %>
-                    <%= link_to song.title, album_song_path(@album, song), remote:true %>
-                    <br><br>
-                  <% end %>
-
-              <% else %>
-              <%= link_to "Create new song", new_album_song_path(@album) %>
+      <div class="well col-sm-12 col-md-5">
+        <div class="panel panel-default">
+          <div class="panel-heading resizeNewButton1">
+            <h1 class="text-center songListHover">
+                Song List
+                <%= link_to(new_album_song_path(@album), remote:true) do %>
+                  <%= image_tag('add_icon.png', class: "icon" ) %>
+                <% end %>
+            </h1>
+          </div>
+          <div class="panel-body">
+            <% if @album.songs %>
+            <div class="list-block">
+              <% @album.songs.each do |song| %>
+                <div class="text-medium text-medium-songs"><%= link_to song.title, album_song_path(@album, song), remote:true %></div>
               <% end %>
             </div>
+            <% end %>
           </div>
-        </div>
-        <div class="col-md-6" id="riff_list">
-          <h1 style="text-align: center; margin-bottom: 25px;">Riff List</h1>
-          <h3 style="text-align: center; margin-bottom: 25px;">Select a Song to Display your Riffs</h3>
-
         </div>
       </div>
 
-      <% else %>
-      <%= link_to "Create new album", new_user_album_path(@user) %>
+      <div class="well col-sm-12 col-md-6 col-md-offset-1" id="riff_list">
+        <h1 class="margin-bottom-xsmall text-center">Riff List</h1>
+        <h3 class="margin-bottom-small text-center">Select a Song to Display your Riffs</h3>
+      </div>
       <% end %>
-    <% else %>
-      <h2><%= link_to "Log-in", new_user_session_path %> | <%= link_to "Signup", new_user_registration_path %></h2>
-    <% end %>
-  </div>
 
+      <% if @user && !@album %>
+        <%= link_to "Create new album", new_user_album_path(@user) %>
+      <% end %>
+
+      <% if !@user %>
+      <h2><%= link_to "Log-in", new_user_session_path %> | <%= link_to "Signup", new_user_registration_path %></h2>
+      <% end %>
+    </div>
+  </div>
 </div>

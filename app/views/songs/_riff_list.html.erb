@@ -1,32 +1,21 @@
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <h1 style="text-align: center; margin-bottom: 25px;">Melodies for <%= @song.title %></h1>
+  <div class="panel-heading resizeNewButton2">
+    <h1 class="text-center">
+      Riffs for <%= @song.title %>
+      <%= link_to(new_song_riff_path(@song)) do %>
+        <%= image_tag('add_icon.png', class: "icon" ) %>
+      <% end %>
+    </h1>
   </div>
   <div class="panel-body" style="background-color: rgba(0,0,0,0.9);">
-    <%= link_to(new_song_riff_path(@song)) do %>
-      <div class="newRiff col-md-offset-3">
-        <h3 style="text-align: center;">Create New Riff </h3>
-      </div>
-      <br>
-    <% end %>
   <div id="riff_list">
     <% if @song.riffs %>
       <% @song.riffs.each do |riff| %>
-        <div class="melodyListItem">
-            <span>
-              <%= link_to(song_riff_path(@song, riff)) do %>
-                <h3 style="text-align: center;"><%= riff.title %></h3>
-              <% end %>
-              <div style="padding: 5px;">
-                <% riff.cryptogram.note_array.each do |noteDiv| %>
-                  <%= noteDiv.html_safe %>
-                <% end %>
-              </div>
-            </span>
-            <br><br>
-
+        <div class="text-medium text-medium-riffs centerText">
+          <%= link_to(song_riff_path(@song, riff)) do %>
+            <%= riff.title %>
+          <% end %>
         </div>
-        <br>
       <% end %>
     <% end %>
   </div>
