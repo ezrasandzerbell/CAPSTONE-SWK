@@ -46,7 +46,7 @@ body {
 }
 
 .album-background-img {
-  background-image: url('/assets/record.jpg');
+  background-image: url('record.jpg');
   min-height: 100vh;
 background-repeat: no-repeat;
 background-attachment: fixed;
@@ -56,7 +56,7 @@ background-size: cover;
 
 .song-background-img {
   padding-top: 40px;
-  background-image: url('/assets/songs.jpg');
+  background-image: url('songs.jpg');
   min-height: 100%;
 background-repeat: no-repeat;
 background-attachment: fixed;
