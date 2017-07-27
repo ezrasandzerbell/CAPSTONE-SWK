@@ -4,7 +4,7 @@ class Riff < ActiveRecord::Base
 
   validates :title, :song_id, :presence => true
 
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "mandala_color.jpg"
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "https://static1.squarespace.com/static/540e82e7e4b0a78038e44eee/t/59793242e6f2e1264328677b/1501114965952/?format=750w"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   has_attached_file :song_audio
