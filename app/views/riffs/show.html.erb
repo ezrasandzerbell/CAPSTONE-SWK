@@ -1,95 +1,158 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
-
-    <!-- Title and Image -->
-    <br><br>
-    <div style="text-align: center; font-size: 80px; color: white;"><%= @riff.title %></div>
-    <% if @riff.avatar  %>
-      <div class="centerIcons">
-        <%= image_tag(@riff.avatar, style: "height: 300px") %>
-      </div>
-    <% end %>
-    <!-- Upload Photo / Play Cryptogram / Write Notes -->
-
-    <% if @riff.song_audio %>
-      <span  class="page-header" ><audio src="<%= @riff.song_audio %>" type="audio/mpeg" controls>Your browser does not support the audio element.</audio> <br><br></span>
-    <% end %>
-    <div class="row centerIcons">
-      <%= link_to image_tag('add_img.jpg'), song_riff_path(@song, @riff), id: "addImage", remote: true %>
-      <%= link_to image_tag("sheet_music_icon.png"), song_riff_path(@song, @riff), id: "addSheetMusic", remote: true %>
-      <%= link_to "Sheet Music", 'https://www.noteflight.com/login', target: :_blank %>
-      <%= link_to image_tag("song_audio_icon.png"), song_riff_path(@song, @riff), id: "addSongAudio", remote: true %>
-      <%= link_to image_tag('take_note.jpg'), song_riff_path(@song, @riff), id: "addThoughts", remote: true %>
-    </div>
-
-    <!-- Update-Forms -->
-
-    <div id="riff_thoughts_form">
-      <%= form_for [@song, @riff] do |f| %>
-        <div class="input-field">
-          <%= f.label :thoughts,'Song Lyrics / Thoughts', style: "color: white; margin-left: 40%;"%>
-          <%= f.text_area :thoughts, style: "color: white;", class: "materialize-textarea", :required => 'required' %>
-          <br>
-          <span style="margin-left: 34%;"><%= f.submit class: "btn"%><button class="btn" id="hide_thoughts_form">Cancel</button></span>
+    <div class="row margin-top-large">
+      <!-- Title and Image -->
+      <div class="col-sm-4">
+        <div class="riff-title margin-bottom-xsmall">
+          <%= @riff.title %>
         </div>
 
-      <% end %>
+        <% if @riff.avatar  %>
+          <div class="center-icons text-white margin-top-none">
+            <%= image_tag(@riff.avatar, style: "height: 300px") %>
+          </div>
 
-    </div>
+          <!-- Edit Image -->
+          <div class="col-sm-12 margin-top-small center-icons">
+            <div class="hover-big">
+              <%= link_to image_tag('edit_icon.png', class:"icon text-white text-center"), id: "addImage", remote: true  do %>
+                <%= image_tag('edit_icon.png',  class: "icon")%>
+                <span>Update Image</span>
+              <% end %>
+            </div>
 
-    <div id="riff_image_form" style="margin-left: 40%;">
-      <%= form_for [@song, @riff], url: song_riff_path(@song, @riff), html: { method: :put } do |form| %>
-        <%= form.label :avatar, 'Upload Song Image', style: "font-size: 18px; color: white; margin-left: 5%;" %>
-        <%= form.file_field :avatar, style: "color: white;  margin-left: 5%;", :required => 'required'  %>
-        <br>
-        <%= form.submit "Update", class: "btn"%><button class="btn" id="hide_riff_form">Cancel</button>
-      <% end %>
+            <div id="riff_image_form">
+              <%= form_for [@song, @riff], url: song_riff_path(@song, @riff), html: { method: :put } do |form| %>
+                <%= form.label :avatar, 'Upload Riff Image', class: "upload-label" %>
+                <%= form.file_field :avatar, :class => 'text-white', :required => 'required'  %>
+                <br>
+                <%= form.submit "Update", class: "btn"%>
+                <button id="hide_image_form" class="btn margin-left-xsmall">Cancel</button>
+              <% end %>
+            </div>
+          </div>
 
-    </div>
-
-    <div id="sheet_music_form" style="margin-left: 40%;">
-      <%= form_for [@song, @riff], url: song_riff_path(@song, @riff), html: { method: :put } do |form| %>
-        <%= form.label :sheet_music, 'Upload Sheet Music Image', style: "font-size: 18px; color: white; margin-left: 5%;" %>
-        <%= form.file_field :sheet_music, style: "color: white;  margin-left: 5%;", :required => 'required'  %>
-        <br>
-        <%= form.submit "Update", class: "btn"%><button class="btn" id="hide_sheet_music_form">Cancel</button>
-      <% end %>
-    </div>
-
-    <div id="song_audio_form" style="margin-left: 40%;">
-      <%= form_for [@song, @riff], url: song_riff_path(@song, @riff), html: { method: :put } do |form| %>
-        <%= form.label :song_audio, 'Upload Song Audio', style: "font-size: 18px; color: white; margin-left: 5%;" %>
-        <%= form.file_field :song_audio, style: "color: white;  margin-left: 5%;", :required => 'required'  %>
-        <br>
-        <%= form.submit "Update", class: "btn"%><button class="btn" id="hide_sheet_music_form">Cancel</button>
-      <% end %>
-    </div>
-
-    <div style="text-align: center;">
-      <h1>Musical Cryptogram <span class="startButton"> <%= image_tag('playbtn.jpg') %> </span></h1>
-    </div>
-    <div class="row encrypted_div">
-      <% @riff.cryptogram.note_array.each do |noteDiv| %>
-        <%= noteDiv.html_safe %>
-      <% end %>
-      <br>
-      <br>
-    </div>
-  <% if @riff.thoughts %>
-      <h1 style="text-align: center;">Lyrics / Song Notes:</h1>
-      <div  class="encrypted_div" >
-        <p><%= @riff.thoughts %></p>
+        <% end %>
       </div>
-      <br>
-      <br>
-  <% end %>
 
-  <% if @riff.sheet_music %>
-      <div class="centerIcons">
-        <a href="http://www.noteflight.com"><%= image_tag(@riff.sheet_music, style: "width: 700px;") %></a>
+      <div class="col-sm-7 col-sm-offset-1 margin-bottom">
+        <!-- Audio -->
+        <div class="col-sm-12 margin-bottom text-center">
+          <h5 class="text-gray">Audio</h5>
+          <div class="col-sm-12 center-icons text-white hover-big margin-bottom-small">
+            <% if @riff.song_audio %>
+              <audio id="audio" src="<%= @riff.song_audio %>" type="audio/mpeg" controls>Your browser does not support the audio element.</audio>
+            <% end %>
+          </div>
+
+          <!-- Edit Audio -->
+          <div class="col-sm-12 center-icons">
+            <%= link_to song_riff_path(@song, @riff), id: "addSongAudio", class: "hover-big", remote: true  do %>
+              <%= image_tag('edit_icon.png',  class: "icon")%>
+              <span>Update Audio</span>
+            <% end %>
+
+            <div id="song_audio_form">
+              <%= form_for [@song, @riff], url: song_riff_path(@song, @riff), html: { method: :put } do |form| %>
+                <%= form.label :song_audio, 'Upload Song Audio', class: "upload-label" %>
+                <%= form.file_field :song_audio, :class => 'text-white', :required => 'required'  %>
+                <br>
+                <%= form.submit "Update", class: "btn"%>
+                <button id="hide_audio_form" class="btn margin-left-xsmall">Cancel</button>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sheet Music -->
+        <div class="col-sm-12 margin-bottom-small text-center">
+          <h5 class="text-gray">Sheet Music</h5>
+          <% if @riff.sheet_music %>
+              <div class="center-icons">
+                <a href="http://www.noteflight.com" target="_blank"><%= image_tag(@riff.sheet_music, style: "width: 700px;") %></a>
+              </div>
+          <% end %>
+        </div>
+
+        <!-- Edit Sheet Music -->
+        <div class="col-sm-6 center-icons text-white hover-big">
+          <%= link_to image_tag('add_icon_white.png'), id: "createSheetMusic", href: 'https://www.noteflight.com/login', target: :_blank do %>
+            <%= image_tag('add_icon_white.png',  class: "icon")%>
+            <span>Create Sheet Music</span>
+          <% end %>
+        </div>
+
+        <div class="col-sm-6 center-icons text-white hover-big">
+          <%= link_to song_riff_path(@song, @riff), id: "addSheetMusic", remote: true  do %>
+            <%= image_tag('edit_icon.png',  class: "icon")%>
+            <span>Upload Sheet Music</span>
+          <% end %>
+        </div>
+
+        <div id="sheet_music_form" class="margin-left-large">
+          <%= form_for [@song, @riff], url: song_riff_path(@song, @riff), html: { method: :put } do |form| %>
+            <%= form.label :sheet_music, 'Upload Sheet Music Image', class: "upload-label" %>
+            <%= form.file_field :sheet_music, :class => 'text-white', :required => 'required'  %>
+            <br>
+            <%= form.submit "Update", class: "btn"%>
+            <button class="btn margin-left-xsmall" id="hide_sheet_music_form">Cancel</button>
+          <% end %>
+        </div>
       </div>
-      <br>
-      <br>
-  <% end %>
+    </div>
+
+
+    <div class="row margin-top-small">
+    <!-- Notes/Thoughts -->
+    <div class="col-sm-12 margin-bottom">
+      <div class="col-sm-12 text-center">
+        <h5 class="text-gray">Notes and Thoughts</h5>
+        <div id="riff-thoughts">
+          <% if @riff.thoughts %>
+            <div>
+              <div  class="encrypted_div" >
+                <p><%= @riff.thoughts %></p>
+              </div>
+            </div>
+          <% else %>
+          <div class="text-white">
+              --
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- Edit Notes/Thoughts -->
+      <div class="col-sm-12 center-icons text-white">
+        <div class="hover-big">
+          <%= link_to song_riff_path(@song, @riff), id: "addThoughts", remote: true  do %>
+            <%= image_tag('edit_icon.png',  class: "icon")%>
+            <span>Update Thoughts</span>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="riff_thoughts_form">
+        <%= form_for [@song, @riff] do |form| %>
+          <%= form.text_field :thoughts, class: "text-white materialize-textarea", :required => 'required' %>
+          <br>
+          <%= form.submit "Update", class: "btn"%>
+          <button id="hide_thoughts_form" class="btn margin-left-xsmall">Cancel</button>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Musical Cryptogram -->
+    <div class="col-sm-12">
+      <div style="text-align: center;">
+        <h5 class="text-gray">Musical Cryptogram <span class="startButton"> <%= image_tag('playbtn.jpg', class: "icon") %> </span></h1>
+      </div>
+      <div class="row encrypted_div">
+        <% @riff.cryptogram.note_array.each do |noteDiv| %>
+          <%= noteDiv.html_safe %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

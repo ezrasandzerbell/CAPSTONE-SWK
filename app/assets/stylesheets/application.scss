@@ -175,6 +175,21 @@ li {
 
 .icon {
   height: 30px;
+  margin-right: .8em;
+}
+
+.hover-big {
+  transition: .1s;
+}
+
+.hover-big:hover {
+  font-size: 1.1em;
+  height: 31px;
+  transition: .2s;
+}
+
+.hover-gray:hover{
+  color: gray;
 }
 
 input {
@@ -322,12 +337,12 @@ input {
   margin-top: 7em;
 }
 
-.margin-bottom-xsmall {
-  margin-bottom: .7em;
-}
-
 .margin-bottom-small {
   margin-bottom: 2em;
+}
+
+.margin-bottom-xsmall {
+  margin-bottom: .2em;
 }
 
 .margin-bottom {
@@ -343,11 +358,15 @@ input {
 }
 
 .margin-left-large {
-  margin-left: 10%;
+  margin-left: 15em;
 }
 
 .margin-right {
   margin-right: 5em;
+}
+
+.margin-left-xsmall {
+  margin-left: .2em;
 }
 
 .margin-left-small {
@@ -368,6 +387,31 @@ input {
 
 .text-center {
   text-align: center;
+}
+
+.text-gray {
+  color: gray;
+}
+
+.text-white {
+  color: white;
+}
+
+.border-bottom-white {
+  padding-bottom: 2em;
+  border-bottom: .1em solid white;
+}
+
+.upload-label {
+  font-size: 18px;
+  color: white;
+  margin-left: 5%
+}
+
+.riff-title {
+  text-align: center;
+  font-size: 80px;
+  color: white;
 }
 
 a:hover {
@@ -425,12 +469,12 @@ li {
   }
 }
 
-.resizeNewButton1 a:hover img {
+.resize-new-button1 a:hover img {
    width: 9%;
    height: 9%;
 }
 
-.resizeNewButton2 a:hover img {
+.resize-new-button2 a:hover img {
    width: 8%;
    height: 8%;
 }
@@ -544,6 +588,10 @@ li {
   display: none;
 }
 
+#song_audio_form {
+  display: none;
+}
+
 .cryptoWrapper {
   border-style: solid;
   border-color: white;
@@ -581,7 +629,7 @@ a:hover {
   margin: 20px;
 }
 
-.centerIcons {
+.center-icons {
   display: flex;
     flex-direction: row;
     justify-content: center;
