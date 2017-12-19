@@ -32,7 +32,7 @@ $(document).on ("turbolinks:load", function(){
     });
     $(".dSharp").click(function() {
       var audioElement = document.createElement('audio');
-      audioElement.setAttribute('src', '/audio/Eb.mp3');
+      audioElement.setAttribute('src', '/audio/Eb3.mp3');
       audioElement.play();
     });
     $(".e").click(function() {
